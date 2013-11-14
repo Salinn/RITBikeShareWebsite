@@ -14,7 +14,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = '8c5dda97e446a0d4e9f3693dd9140ef4a453eecfff3417bc427333f1db72507824466dc81e93f37af19bd2b3c3bc2a6d88edf5159e51872d6bf2d9887903abef'
+  config.secret_key = '387f4417830fb7d21350c8626e97a676b91bcb9e7a192c56e05c89bedf9c66929953cb4167aca10323805df75a41421013945a4b9f65406d08fb6738bf239469'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -51,12 +51,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [ :email ]
+  config.case_insensitive_keys = [ :login ]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [ :email ]
+  config.strip_whitespace_keys = [ :login ]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
@@ -105,7 +105,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = 'd7325f0cf07add72b6959a1093a9109c4a581713c5b8e40392c197cc7b8393f84b7cf0843f32397b6dea68cf69a51b6f69e01bfebee2c62d84cf98201f138321'
+  # config.pepper = 'f4ed7e028aa57113e1c8b9e7ad633c07803f414b425810522f90204bd2ed73b5b52a9c53ca47653d3d4e15d58cf381fa454e9bf33c2714ac21f925d24acd54ea'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without

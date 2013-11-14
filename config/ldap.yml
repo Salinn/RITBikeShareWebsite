@@ -21,28 +21,31 @@ authorizations: &AUTHORIZATIONS
 ## Environment
 
 development:
-  host: ldap.phys.ethz.ch
-  port: 389
+  host: ldap.rit.edu
+  port: 636
   attribute: uid
-  base: o=ethz,c=ch
+  base: ou=people,dc=rit,dc=edu
+  admin_user: cn=admin,dc=test,dc=com
+  admin_password: admin_password
+  ssl: simple_tls
   # <<: *AUTHORIZATIONS
 
 test:
-  host: localhost
-  port: 3389
-  attribute: cn
-  base: ou=people,dc=test,dc=com
+  host: ldap.rit.edu
+  port: 636
+  attribute: uid
+  base: ou=people,dc=rit,dc=edu
   admin_user: cn=admin,dc=test,dc=com
   admin_password: admin_password
   ssl: simple_tls
   # <<: *AUTHORIZATIONS
 
 production:
-  host: localhost
+  host: ldap.rit.edu
   port: 636
-  attribute: cn
-  base: ou=people,dc=test,dc=com
+  attribute: uid
+  base: ou=people,dc=rit,dc=edu
   admin_user: cn=admin,dc=test,dc=com
   admin_password: admin_password
-  ssl: start_tls
+  ssl: simple_tls
   # <<: *AUTHORIZATIONS
