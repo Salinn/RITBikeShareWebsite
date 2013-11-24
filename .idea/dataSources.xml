@@ -13,6 +13,18 @@
         </library>
       </libraries>
     </data-source>
+    <data-source source="LOCAL" name="Rails RITBikeShareWebsite: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="9e467544-cb4c-4465-b038-caa86b8dd6e3">
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/xerial-sqlite-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/sqlite-jdbc-3.7.6.3-20110609.081603-3.jar</url>
+        </library>
+      </libraries>
+    </data-source>
   </component>
 </project>
 
