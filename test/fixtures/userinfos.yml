@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rit_email: MyString
+  bike_checked_out: 1
+  admin: false
+
+two:
+  rit_email: MyString
+  bike_checked_out: 1
+  admin: false

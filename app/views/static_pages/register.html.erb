@@ -1,0 +1,10 @@
+<% provide(:title, 'Register') %>
+<h1>Register</h1>
+
+<%= form_for Userinfo.new do |f| %>
+
+    <%= check_box_tag(:pet_dog) %>
+    <%= label_tag(:pet_dog, "I own a dog") %>
+
+    <div><%= f.submit "Sign in" %></div>
+<% end %>

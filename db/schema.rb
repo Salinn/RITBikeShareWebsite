@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131108003234) do
+ActiveRecord::Schema.define(version: 20131226173905) do
+
+  create_table "userinfos", force: true do |t|
+    t.string   "rit_email"
+    t.integer  "bike_checked_out"
+    t.boolean  "admin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "login",               default: "", null: false

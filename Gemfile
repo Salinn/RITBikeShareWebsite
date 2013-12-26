@@ -30,10 +30,18 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'devise_ldap_authenticatable'
 gem 'bootstrap-sass', '2.3.2.0'
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development do
+  gem 'better_errors', '1.0.1'
+  gem 'binding_of_caller', '0.7.2'
 end
 
 # Use ActiveModel has_secure_password
