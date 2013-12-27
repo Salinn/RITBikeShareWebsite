@@ -1,5 +1,9 @@
 RITBikeShareWebsite::Application.routes.draw do
-  resources :userinfos
+  resources :other_users
+
+  resources :rit_users
+
+  resources :bikes
 
   devise_for :users
 

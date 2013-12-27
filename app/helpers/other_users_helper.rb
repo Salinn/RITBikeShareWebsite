@@ -1,0 +1,2 @@
+module OtherUsersHelper
+end

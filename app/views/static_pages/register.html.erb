@@ -4,8 +4,18 @@
 <%= form_for Userinfo.new do |f| %>
 
 
-    <%= check_box_tag(:pet_dog) %>
-    <%= label_tag(:pet_dog, "I own a dog") %>
+    <% url = "https://drive.google.com/file/d/0BxFVFuWCRDh5QlZ4Y29kaHVjV2M/edit?usp=sharing" %>
 
-    <div><%= f.submit "Sign in" %></div>
+    <iframe src=<%= url %>&embedded=true" style="width:920px; height:800px;"></iframe>
+    <br/>
+    <br/>
+    If you cannot see the above pdf please <a href="https://drive.google.com/a/g.rit.edu/file/d/0BxFVFuWCRDh5QlZ4Y29kaHVjV2M/edit?usp=sharing">
+       click here </a>
+    <br/>
+    <%= label_tag(:pet_dog, "I own a dog") %>
+    <%= check_box_tag(:pet_dog) %>
+    <br/>
+    <br/>
+
+    <div><%= f.submit "Register" %></div>
 <% end %>

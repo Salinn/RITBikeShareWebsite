@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @rit_user.user_id %>
+</p>
+
+<p>
+  <strong>Rit email:</strong>
+  <%= @rit_user.rit_email %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @rit_user.admin %>
+</p>
+
+<%= link_to 'Edit', edit_rit_user_path(@rit_user) %> |
+<%= link_to 'Back', rit_users_path %>

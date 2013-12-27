@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bike:</strong>
+  <%= @bike.bike_id %>
+</p>
+
+<p>
+  <strong>Need repair:</strong>
+  <%= @bike.need_repair %>
+</p>
+
+<%= link_to 'Edit', edit_bike_path(@bike) %> |
+<%= link_to 'Back', bikes_path %>
