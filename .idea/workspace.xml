@@ -34,10 +34,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_header.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="23" selection-start="385" selection-end="385" vertical-scroll-proportion="0.17374517" vertical-offset="0" max-vertical-offset="777">
+            <state line="9" column="23" selection-start="385" selection-end="385" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="420">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="19" selection-start="552" selection-end="552" vertical-scroll-proportion="0.411985" vertical-offset="0" max-vertical-offset="801">
               <folding />
             </state>
           </provider>
@@ -88,7 +97,6 @@
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/sessions/create.html.erb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20131226173905_create_userinfos.rb" />
@@ -98,6 +106,7 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/rit_users_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -721,13 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="30" selection-start="1193" selection-end="1193" vertical-scroll-proportion="0.78651685" vertical-offset="0" max-vertical-offset="945">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="368" selection-end="368" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="285">
@@ -870,7 +872,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="23" selection-start="385" selection-end="385" vertical-scroll-proportion="0.17374517" vertical-offset="0" max-vertical-offset="777">
+        <state line="9" column="23" selection-start="385" selection-end="385" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="19" selection-start="552" selection-end="552" vertical-scroll-proportion="0.411985" vertical-offset="0" max-vertical-offset="801">
           <folding />
         </state>
       </provider>
