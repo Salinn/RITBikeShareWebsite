@@ -1,0 +1,31 @@
+<% provide(:title, 'Quiz') %>
+<h1>Quiz</h1>
+
+<div class="form_row">
+  <label for="theme">How Long Can you Rent a Bike for?:</label>
+  <% [ '1 hour', '12 hours', '1 Day', '7 Days', '1 Month' ].each do |theme| %>
+      <br><%= radio_button_tag 'theme', theme, @theme == theme %>
+      <%= theme.humanize %>
+  <% end %>
+</div>
+<div class="form_row">
+  <label for="theme">What should you do if you lose your key, lose your lock, or have a similar issue?:</label>
+  <% [ 'Call Residential Life', 'Do nothing', 'Call Dr.Destler', 'Call Student Government' ].each do |theme| %>
+      <br><%= radio_button_tag 'theme', theme, @theme == theme %>
+      <%= theme.humanize %>
+  <% end %>
+</div>
+<div class="form_row">
+  <label for="theme">How much do you pay for a minor issue that occurs when you took the bike out?:</label>
+  <% [ '50 Dollars', '20 Dollars', '5 Dollars', 'Nothing' ].each do |theme| %>
+      <br><%= radio_button_tag 'theme', theme, @theme == theme %>
+      <%= theme.humanize %>
+  <% end %>
+</div>
+<div class="form_row">
+  <label for="theme">Where do you check these bikes out from?:</label>
+  <% [ 'Global Village', 'Residential Office in the Gleason Dorm', 'Java Wallies', 'The Gym' ].each do |theme| %>
+      <br><%= radio_button_tag 'theme', theme, @theme == theme %>
+      <%= theme.humanize %>
+  <% end %>
+</div>

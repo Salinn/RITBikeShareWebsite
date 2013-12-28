@@ -10,6 +10,7 @@ RITBikeShareWebsite::Application.routes.draw do
   get 'sign_in', to: "static_pages#sign_in"
   get 'register', to: "static_pages#register"
   get 'account', to: "static_pages#account"
+  get 'quiz', to: "static_pages#quiz"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
