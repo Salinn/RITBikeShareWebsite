@@ -11,26 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131227205529) do
+ActiveRecord::Schema.define(version: 20131228045348) do
 
   create_table "bikes", force: true do |t|
     t.integer  "bike_id"
     t.boolean  "need_repair"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "other_users", force: true do |t|
-    t.integer  "rit_user_id"
-    t.string   "other_email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "rit_users", force: true do |t|
-    t.integer  "user_id"
-    t.string   "rit_email"
-    t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,6 +30,9 @@ ActiveRecord::Schema.define(version: 20131227205529) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin"
+    t.string   "email"
+    t.boolean  "registered"
   end
 
   add_index "users", ["login"], name: "index_users_on_login", unique: true
