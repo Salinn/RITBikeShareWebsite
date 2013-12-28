@@ -1,0 +1,29 @@
+<h1>Listing guest_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rit user</th>
+      <th>Other email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @guest_users.each do |guest_user| %>
+      <tr>
+        <td><%= guest_user.rit_user_id %></td>
+        <td><%= guest_user.other_email %></td>
+        <td><%= link_to 'Show', guest_user %></td>
+        <td><%= link_to 'Edit', edit_guest_user_path(guest_user) %></td>
+        <td><%= link_to 'Destroy', guest_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Guest user', new_guest_user_path %>

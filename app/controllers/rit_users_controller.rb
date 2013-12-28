@@ -12,9 +12,6 @@ class RitUsersController < ApplicationController
   def show
   end
 
-  def aaaa
-
-  end
   # GET /rit_users/new
   def new
     @rit_user = RitUser.new

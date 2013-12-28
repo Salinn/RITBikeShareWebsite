@@ -1,5 +1,5 @@
 RITBikeShareWebsite::Application.routes.draw do
-  resources :other_users
+  resources :guest_users
 
   resources :rit_users
 

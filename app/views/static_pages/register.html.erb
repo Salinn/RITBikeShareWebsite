@@ -2,6 +2,7 @@
 <h1>Register</h1>
 
 <%= form_for RitUser.new do |f| %>
+    <% @user = RitUser.where(rit_email: "pmd6624@rit.edu") %>
 
     <% url = "https://drive.google.com/file/d/0BxFVFuWCRDh5QlZ4Y29kaHVjV2M/edit?usp=sharing" %>
 
@@ -11,8 +12,8 @@
     If you cannot see the above pdf please <a href="https://drive.google.com/a/g.rit.edu/file/d/0BxFVFuWCRDh5QlZ4Y29kaHVjV2M/edit?usp=sharing">
        click here </a>
     <br/>
-    <%= label_tag(:pet_dog, "I own a dog") %>
-    <%= check_box_tag(:pet_dog) %>
+    <%= label_tag(:legal_age, "By checking this box I am acknowledging that I am 18 years or older") %>
+    <%= check_box_tag(:legal_age) %>
     <br/>
     <br/>
 
