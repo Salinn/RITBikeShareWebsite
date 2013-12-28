@@ -6,26 +6,27 @@
   <% [ '1 hour', '12 hours', '1 Day', '7 Days', '1 Month' ].each do |theme| %>
       <br><%= radio_button_tag 'theme', theme, @theme == theme %>
       <%= theme.humanize %>
+      <%=  %>
   <% end %>
 </div>
 <div class="form_row">
-  <label for="theme">What should you do if you lose your key, lose your lock, or have a similar issue?:</label>
-  <% [ 'Call Residential Life', 'Do nothing', 'Call Dr.Destler', 'Call Student Government' ].each do |theme| %>
-      <br><%= radio_button_tag 'theme', theme, @theme == theme %>
-      <%= theme.humanize %>
+  <label for="theme1">What should you do if you lose your key, lose your lock, or have a similar issue?:</label>
+  <% [ 'Call Residential Life', 'Do nothing', 'Call Dr.Destler', 'Call Student Government' ].each do |theme1| %>
+      <br><%= radio_button_tag 'theme1', theme1, @theme1 == theme1 %>
+      <%= theme1.humanize %>
   <% end %>
 </div>
 <div class="form_row">
-  <label for="theme">How much do you pay for a minor issue that occurs when you took the bike out?:</label>
-  <% [ '50 Dollars', '20 Dollars', '5 Dollars', 'Nothing' ].each do |theme| %>
-      <br><%= radio_button_tag 'theme', theme, @theme == theme %>
-      <%= theme.humanize %>
+  <label for="theme2">How much do you pay for a minor issue that occurs when you took the bike out?:</label>
+  <% [ '50 Dollars', '20 Dollars', '5 Dollars', 'Nothing' ].each do |theme2| %>
+      <br><%= radio_button_tag 'theme2', theme2, @theme2 == theme2 %>
+      <%= theme2.humanize %>
   <% end %>
 </div>
 <div class="form_row">
-  <label for="theme">Where do you check these bikes out from?:</label>
-  <% [ 'Global Village', 'Residential Office in the Gleason Dorm', 'Java Wallies', 'The Gym' ].each do |theme| %>
-      <br><%= radio_button_tag 'theme', theme, @theme == theme %>
-      <%= theme.humanize %>
+  <label for="theme3">Where do you check these bikes out from?:</label>
+  <% [ 'Global Village', 'Residential Office in the Gleason Dorm', 'Java Wallies', 'The Gym' ].each do |theme3| %>
+      <br><%= radio_button_tag 'theme3', theme3, @theme3 == theme3 %>
+      <%= theme3.humanize %>
   <% end %>
 </div>
