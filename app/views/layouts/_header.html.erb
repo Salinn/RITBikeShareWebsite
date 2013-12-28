@@ -1,10 +1,18 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "RIT Bike Share", root_path, id: "logo" %>
+      <% if user_signed_in? && current_user.admin %>
+          <%= link_to "RIT Bike Share", admin_home_path, id: "logo" %>
+      <% elsif user_signed_in? %>
+          <%= link_to "RIT Bike Share", user_home_path, id: "logo" %>
+      <% else %>
+          <%= link_to "RIT Bike Share", root_path, id: "logo" %>
+      <% end %>
       <nav>
         <ul class="nav pull-right">
-          <% if user_signed_in? %>
+          <% if user_signed_in? && current_user.admin %>
+              <li><%= link_to "Home",    admin_home_path %></li>
+          <% elsif user_signed_in? %>
               <li><%= link_to "Home",    user_home_path %></li>
           <% else %>
               <li><%= link_to "Home",    root_path %></li>

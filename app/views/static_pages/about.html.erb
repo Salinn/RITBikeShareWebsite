@@ -1,3 +1,6 @@
+<%= current_user.id %><br/>
+<%= current_user.admin %><br/>
+
 <% @users = User.all %>
 <% @users.each do |user| %>
     <%= user %> <br/>
