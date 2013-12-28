@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bike user:</strong>
+  <%= @checked_out.bike_user_id %>
+</p>
+
+<p>
+  <strong>Bike:</strong>
+  <%= @checked_out.bike_id %>
+</p>
+
+<p>
+  <strong>Checkout time:</strong>
+  <%= @checked_out.checkout_time %>
+</p>
+
+<p>
+  <strong>Checkin time:</strong>
+  <%= @checked_out.checkin_time %>
+</p>
+
+<p>
+  <strong>Fixed:</strong>
+  <%= @checked_out.fixed %>
+</p>
+
+<p>
+  <strong>Problem:</strong>
+  <%= @checked_out.problem %>
+</p>
+
+<%= link_to 'Edit', edit_checked_out_path(@checked_out) %> |
+<%= link_to 'Back', checked_outs_path %>

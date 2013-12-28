@@ -1,0 +1,13 @@
+<% @users = User.all %>
+<% @users.each do |user| %>
+    <%= user %> <br/>
+    <%= user.email %> <br/>
+    <%= user.admin %> <br/>
+<% end %>
+
+<% @bikes = Bike.all %>
+<% @bikes.each do |bike| %>
+   <%= bike %><br/>
+   <%= bike.bike_id %><br/>
+   <%= bike.checked_out %><br/>
+<% end %>

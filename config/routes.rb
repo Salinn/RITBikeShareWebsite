@@ -1,4 +1,6 @@
 RITBikeShareWebsite::Application.routes.draw do
+  resources :checked_outs
+
   resources :bikes
 
   devise_for :users
@@ -11,6 +13,8 @@ RITBikeShareWebsite::Application.routes.draw do
   get 'register', to: "static_pages#register"
   get 'account', to: "static_pages#account"
   get 'quiz', to: "static_pages#quiz"
+  get 'user_home', to: "static_pages#home_user"
+  get 'admin_home', to: "static_pages#home_admin"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

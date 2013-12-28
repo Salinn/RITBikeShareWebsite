@@ -1,0 +1,37 @@
+<h1>Listing checked_outs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bike user</th>
+      <th>Bike</th>
+      <th>Checkout time</th>
+      <th>Checkin time</th>
+      <th>Fixed</th>
+      <th>Problem</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checked_outs.each do |checked_out| %>
+      <tr>
+        <td><%= checked_out.bike_user_id %></td>
+        <td><%= checked_out.bike_id %></td>
+        <td><%= checked_out.checkout_time %></td>
+        <td><%= checked_out.checkin_time %></td>
+        <td><%= checked_out.fixed %></td>
+        <td><%= checked_out.problem %></td>
+        <td><%= link_to 'Show', checked_out %></td>
+        <td><%= link_to 'Edit', edit_checked_out_path(checked_out) %></td>
+        <td><%= link_to 'Destroy', checked_out, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Checked out', new_checked_out_path %>

@@ -1,20 +1,24 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "sample app", root_path, id: "logo" %>
+      <%= link_to "RIT Bike Share", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home",    root_path %></li>
+          <% if user_signed_in? %>
+              <li><%= link_to "Home",    user_home_path %></li>
+          <% else %>
+              <li><%= link_to "Home",    root_path %></li>
+          <% end %>
           <li><%= link_to "FAQ",    help_path %></li>
           <% if user_signed_in? %>
-            <% if false %>
-              <li><%=  link_to "Account", account_path %></li>
-            <% else %>
-              <li><%=  link_to "Register", quiz_path %></li>
-            <% end %>
-            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+              <% if false %>
+                  <li><%=  link_to "Account", account_path %></li>
+              <% else %>
+                  <li><%=  link_to "Register", quiz_path %></li>
+              <% end %>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
           <% else %>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
+              <li><%= link_to "Sign in", new_user_session_path %></li>
           <% end %>
         </ul>
       </nav>

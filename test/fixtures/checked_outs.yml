@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bike_user_id: 1
+  bike_id: 1
+  checkout_time: 2013-12-28 10:44:30
+  checkin_time: 2013-12-28 10:44:30
+  fixed: false
+  problem: MyText
+
+two:
+  bike_user_id: 1
+  bike_id: 1
+  checkout_time: 2013-12-28 10:44:30
+  checkin_time: 2013-12-28 10:44:30
+  fixed: false
+  problem: MyText

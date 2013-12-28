@@ -1,0 +1,2 @@
+module CheckedOutsHelper
+end
