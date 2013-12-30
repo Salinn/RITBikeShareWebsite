@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    if user_signed_in?
+      after_sign_in_path_for
+    else
+      redirect_to root_url, :alert => exception.message
+    end
+  end
+
 end
