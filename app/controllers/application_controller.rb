@@ -14,6 +14,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def admin_home
+    @user = current_user
+    authorize! :admin_home
+  end
+
   rescue_from CanCan::AccessDenied do |exception|
     if user_signed_in?
       after_sign_in_path_for

@@ -9,4 +9,9 @@ class SessionsController < Devise::SessionsController
       user.update_attributes(:name => fullname)
     end
   end
+
+  def admin_home
+    @user = current_user
+    authorize! :admin_home
+  end
 end
