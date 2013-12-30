@@ -25,9 +25,15 @@ class CheckedOutsController < ApplicationController
   # POST /checked_outs.json
   def create
     @checked_out = CheckedOut.new(checked_out_params)
+    @bike = Bike.find @checked_out.bike_id
+    if @bike.checked_out?
+      return update
+    end
     @checked_out.checkout_time = DateTime.current
     respond_to do |format|
       if @checked_out.save
+        @bike.checked_out = true
+        @bike.save
         format.html  { redirect_to admin_home_path}
         #format.html { redirect_to @checked_out, notice: 'Checked out was successfully created.' }
         #format.json { render action: 'show', status: :created, location: @checked_out }
@@ -41,10 +47,14 @@ class CheckedOutsController < ApplicationController
   # PATCH/PUT /checked_outs/1
   # PATCH/PUT /checked_outs/1.json
   def update
+    @bike = Bike.find @checked_out.bike_id
     respond_to do |format|
       if @checked_out.update(checked_out_params)
-        format.html { redirect_to @checked_out, notice: 'Checked out was successfully updated.' }
-        format.json { head :no_content }
+        @checked_out.checkin_time = DateTime.current
+        @bike.checked_out = false
+        @bike.save
+        format.html { redirect_to admin_home_path, notice: 'Checked out was successfully updated.' }
+        #format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @checked_out.errors, status: :unprocessable_entity }
