@@ -3,19 +3,19 @@
 <% @checked_out = CheckedOut.new %>
 <%= form_for(@checked_out) do |f| %>
     <div class="field">
-      <%= f.label :bike_user_id %><br>
+      <%= f.label :bike_user_id %>
       <%= f.number_field :bike_user_id %>
     </div>
     <div class="field">
-      <%= f.label :bike_id %><br>
+      <%= f.label :bike_id %>
       <%= f.number_field :bike_id %>
     </div>
     <div class="field">
-      <%= f.label :fixed %><br>
+      <%= f.label :fixed %>
       <%= f.check_box :fixed %>
     </div>
     <div class="field">
-      <%= f.label :problem %><br>
+      <%= f.label :problem %>
       <%= f.text_area :problem %>
     </div>
     <div class="actions">

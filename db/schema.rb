@@ -32,28 +32,6 @@ ActiveRecord::Schema.define(version: 20131228205625) do
     t.datetime "updated_at"
   end
 
-  create_table "guest_users", force: true do |t|
-    t.integer  "rit_user_id"
-    t.string   "other_email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "other_users", force: true do |t|
-    t.integer  "rit_user_id"
-    t.string   "other_email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "rit_users", force: true do |t|
-    t.integer  "user_id"
-    t.string   "rit_email"
-    t.boolean  "admin"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "login",               default: "", null: false
     t.datetime "remember_created_at"

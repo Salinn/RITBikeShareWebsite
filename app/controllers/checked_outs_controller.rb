@@ -25,11 +25,12 @@ class CheckedOutsController < ApplicationController
   # POST /checked_outs.json
   def create
     @checked_out = CheckedOut.new(checked_out_params)
-
+    @checked_out.checkout_time = DateTime.current
     respond_to do |format|
       if @checked_out.save
-        format.html { redirect_to @checked_out, notice: 'Checked out was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @checked_out }
+        format.html  { redirect_to admin_home_path}
+        #format.html { redirect_to @checked_out, notice: 'Checked out was successfully created.' }
+        #format.json { render action: 'show', status: :created, location: @checked_out }
       else
         format.html { render action: 'new' }
         format.json { render json: @checked_out.errors, status: :unprocessable_entity }
