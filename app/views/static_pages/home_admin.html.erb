@@ -51,7 +51,7 @@
   </thead>
 
   <tbody>
-  <% @checked_outs = CheckedOut.all %>
+  <% @checked_outs = not_cheched_in %>
   <% @checked_outs.each do |checked_out| %>
       <tr>
         <td><%= checked_out.bike_user_id %></td>
