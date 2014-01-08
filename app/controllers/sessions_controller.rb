@@ -3,11 +3,9 @@ class SessionsController < Devise::SessionsController
   def create
     super
     # get ldap permissions only on rit site instances
-    if root_url.include? "rit.edu"
-      user = User.find_by_id(current_user.id)
-      fullname = Devise::LDAP::Adapter.get_ldap_entry(params[:user][:login])[:displayname].first
-      user.update_attributes(:name => fullname)
-    end
+    @user = User.find_by_id(current_user.id)
+    @user.admin=false
+    @user.save
   end
 
   def admin_home

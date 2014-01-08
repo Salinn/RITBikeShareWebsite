@@ -3,9 +3,7 @@ module BikesHelper
     total__number_of_bikes = 0
     @bikes = Bike.all
     @bikes.each do |bike|
-      if bike.checked_out == false or bike.checked_out == nil
-        total__number_of_bikes+=1
-      end
+      total__number_of_bikes += 1 unless bike.checked_out
     end
     total__number_of_bikes
   end

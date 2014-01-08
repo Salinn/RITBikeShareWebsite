@@ -25,6 +25,7 @@ class BikesController < ApplicationController
   # POST /bikes.json
   def create
     @bike = Bike.new(bike_params)
+    @bike.checked_out =false
     respond_to do |format|
       if @bike.save
         format.html { redirect_to @bike, notice: 'Bike was successfully created.' }

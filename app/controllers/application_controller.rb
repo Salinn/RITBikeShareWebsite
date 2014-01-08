@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   def admin_home
     @user = current_user
-    authorize! :admin_home
+    authorize! :admin_home_path
   end
 
   rescue_from CanCan::AccessDenied do |exception|

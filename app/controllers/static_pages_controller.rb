@@ -13,4 +13,7 @@ class StaticPagesController < ApplicationController
 
   def sign_in
   end
+
+  def admin_home
+  end
 end

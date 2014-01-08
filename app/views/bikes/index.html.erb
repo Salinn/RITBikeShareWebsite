@@ -3,8 +3,9 @@
 <table>
   <thead>
     <tr>
-      <th>Bike</th>
-      <th>Need repair</th>
+      <th>Bike___</th>
+      <th>Checked Out?___</th>
+      <th>Need repair___</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,6 +16,7 @@
     <% @bikes.each do |bike| %>
       <tr>
         <td><%= bike.bike_id %></td>
+        <td><%= bike.checked_out %></td>
         <td><%= bike.need_repair %></td>
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>

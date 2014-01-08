@@ -25,18 +25,14 @@ class CheckedOutsController < ApplicationController
   # POST /checked_outs.json
   def create
     @checked_out = CheckedOut.new(checked_out_params)
-    @bike = Bike.find @checked_out.bike_id
-    if @bike.checked_out?
-      return update
-    end
-    @checked_out.checkout_time = DateTime.current
+    @bike = Bike.find_all_by_bike_id(@checked_out.bike_id).first
+    @bike.checked_out=true
+    @bike.save
+    @checked_out.checkout_time=DateTime.current
     respond_to do |format|
       if @checked_out.save
-        @bike.checked_out = true
-        @bike.save
-        format.html  { redirect_to admin_home_path}
-        #format.html { redirect_to @checked_out, notice: 'Checked out was successfully created.' }
-        #format.json { render action: 'show', status: :created, location: @checked_out }
+        format.html { redirect_to admin_home_path, notice: 'The bike was successfully checked out.' }
+        format.json { render action: 'show', status: :created, location: @checked_out }
       else
         format.html { render action: 'new' }
         format.json { render json: @checked_out.errors, status: :unprocessable_entity }
@@ -47,14 +43,12 @@ class CheckedOutsController < ApplicationController
   # PATCH/PUT /checked_outs/1
   # PATCH/PUT /checked_outs/1.json
   def update
-    @bike = Bike.find @checked_out.bike_id
+    @checked_out.checkin_time=DateTime.current
+    @bike = Bike.find_all_by_bike_id(@checked_out.bike_id).first
     respond_to do |format|
       if @checked_out.update(checked_out_params)
-        @checked_out.checkin_time = DateTime.current
-        @bike.checked_out = false
-        @bike.save
-        format.html { redirect_to admin_home_path, notice: 'Checked out was successfully updated.' }
-        #format.json { head :no_content }
+        format.html { redirect_to admin_home_path, notice: 'The bike was successfully checked in.' }
+        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @checked_out.errors, status: :unprocessable_entity }
@@ -73,13 +67,13 @@ class CheckedOutsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_checked_out
-      @checked_out = CheckedOut.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_checked_out
+    @checked_out = CheckedOut.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def checked_out_params
-      params.require(:checked_out).permit(:bike_user_id, :bike_id, :checkout_time, :checkin_time, :fixed, :problem)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def checked_out_params
+    params.require(:checked_out).permit(:bike_user_id, :bike_id, :checkout_time, :checkin_time, :fixed, :problem)
+  end
 end
