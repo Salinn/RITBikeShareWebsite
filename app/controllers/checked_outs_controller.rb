@@ -44,7 +44,6 @@ class CheckedOutsController < ApplicationController
   # PATCH/PUT /checked_outs/1.json
   def update
     @checked_out.checkin_time=DateTime.current
-    @bike = Bike.find_all_by_bike_id(@checked_out.bike_id).first
     respond_to do |format|
       if @checked_out.update(checked_out_params)
         format.html { redirect_to admin_home_path, notice: 'The bike was successfully checked in.' }
@@ -54,6 +53,9 @@ class CheckedOutsController < ApplicationController
         format.json { render json: @checked_out.errors, status: :unprocessable_entity }
       end
     end
+    @bike = Bike.find_all_by_bike_id(@checked_out.bike_id).first
+    @bike.checked_out=false
+    @bike.save
   end
 
   # DELETE /checked_outs/1
