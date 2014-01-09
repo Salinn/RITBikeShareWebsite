@@ -158,7 +158,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport (= 4.0.1.rc3)
   better_errors (= 1.0.1)
   binding_of_caller (= 0.7.2)
   bootstrap-sass (= 2.3.2.0)

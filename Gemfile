@@ -16,7 +16,6 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem "cancan"
 gem 'whenever'
-gem "activesupport", '4.0.1.rc3'
 
 
 group :doc do

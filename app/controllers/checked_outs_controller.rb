@@ -28,10 +28,12 @@ class CheckedOutsController < ApplicationController
     @bike = Bike.find_all_by_bike_id(@checked_out.bike_id).first
     @bike.checked_out=true
     @bike.save
+    @user = User.find(@checked_out.bike_user_id)
+    UserMailer.test(@user).deliver
     @checked_out.checkout_time=DateTime.current
     respond_to do |format|
       if @checked_out.save
-        format.html { redirect_to admin_home_path, notice: 'The bike was successfully checked out.' }
+        format.html { redirect_to admin_home_path, notice: "The bike was successfully checked out by #{@user.email}." }
         format.json { render action: 'show', status: :created, location: @checked_out }
       else
         format.html { render action: 'new' }
