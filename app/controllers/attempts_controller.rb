@@ -1,5 +1,6 @@
 class AttemptsController < ApplicationController
   before_action :set_attempt, only: [:show, :edit, :update, :destroy]
+  before_action :check_answers, :only => :create
 
   # GET /attempts
   # GET /attempts.json
@@ -24,11 +25,14 @@ class AttemptsController < ApplicationController
   # POST /attempts
   # POST /attempts.json
   def create
-    @attempt = Attempt.new(attempt_params)
-
+    if @score >= 75
+      @attempt = Attempt.new(attempt_params)
+    else
+      redirect_to user_home_path, notice: "You did not answer enough questions correctly, your score was #{@score}."
+    end
     respond_to do |format|
       if @attempt.save
-        format.html { redirect_to @attempt, notice: 'Attempt was successfully created.' }
+        format.html { redirect_to user_home_path, notice: 'Registration was Successful.' }
         format.json { render action: 'show', status: :created, location: @attempt }
       else
         format.html { render action: 'new' }
@@ -62,6 +66,18 @@ class AttemptsController < ApplicationController
   end
 
   private
+    def check_answers
+      @survey = Survey.find(1)
+      @questions = @survey.questions
+      @attempt.score=0
+      @score = 0
+      @questions.each do |question|
+        answer = attempt_params[question.__id__]
+        if answer.correct?
+          @score += answer.weight
+        end
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_attempt
       @attempt = Attempt.find(params[:id])

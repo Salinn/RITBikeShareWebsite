@@ -3,4 +3,27 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :ldap_authenticatable, :rememberable, :trackable
   belongs_to :checked_out
+  has_many :attempts
+  ROLES = %w[admin student]
+  before_save do
+    #entry = Devise::LDAP::Adapter.get_ldap_entry(self.login)
+    #self.name = entry[:displayname][0]
+    self.role= "student"
+  end
+  def roles=(roles)
+    self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
+  end
+
+  def roles
+    ROLES.reject do |r|
+      ((roles_mask.to_i || 0) & 2**ROLES.index(r)).zero?
+    end
+  end
+
+  def roles? role
+    if self.role == role
+      return true
+    end
+    false
+  end
 end

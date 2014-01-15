@@ -21,10 +21,11 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     if user_signed_in?
-      after_sign_in_path_for
+      flash[:error] = "Access Denied"
+      redirect_to user_home_url, :alert => exception.message
     else
+      flash[:error] = "Access Denied"
       redirect_to root_url, :alert => exception.message
     end
   end
-
 end

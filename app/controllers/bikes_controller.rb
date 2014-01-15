@@ -1,6 +1,7 @@
 class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
 
+  load_and_authorize_resource
   # GET /bikes
   # GET /bikes.json
   def index

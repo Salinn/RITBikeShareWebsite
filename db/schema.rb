@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114233355) do
+ActiveRecord::Schema.define(version: 20140115190543) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -141,6 +141,8 @@ ActiveRecord::Schema.define(version: 20140114233355) do
     t.boolean  "admin"
     t.string   "email"
     t.boolean  "registered"
+    t.string   "role"
+    t.integer  "roles_mask"
   end
 
   add_index "users", ["login"], name: "index_users_on_login", unique: true

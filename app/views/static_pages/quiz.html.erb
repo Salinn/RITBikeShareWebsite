@@ -1,20 +1,19 @@
 <% provide(:title, 'Quiz') %>
 <h1>Quiz</h1>
 
-<% @attempt = Attempt.new %>
-<%= form_for(@attempt) do |f| %>
+<%= form_for(Attempt.create) do |f| %>
     <% @survey = Survey.find(1) %>
-    <%= @survey.name %> <br/><br/>
-    <%= @survey.description  %><br/><br/>
+    <h3><%= @survey.description  %></h3>
+    <br/>
     <% @questions = @survey.questions %>
-    <%= @questions.each do |question|
-      question
-      puts
-      puts
-      end
-        %>
-
-
+    <% @questions.each do |question| %>
+        <h4><%= question.text %></h4>
+        <br/>
+        <% question.answers.each do |answer| %>
+            <h5><%= f.radio_button question.__id__, answer.correct?, :checked => false %>  <%=answer.text%></h5>
+            <br/>
+        <% end %>
+    <% end %>
     <div class="actions">
       <%= f.submit %>
     </div>
