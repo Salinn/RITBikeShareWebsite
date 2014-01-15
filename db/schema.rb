@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131228205625) do
+ActiveRecord::Schema.define(version: 20140114233355) do
+
+  create_table "answers", force: true do |t|
+    t.integer  "question_id"
+    t.integer  "weight"
+    t.string   "text"
+    t.boolean  "correct"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "attempts", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "survey_id"
+    t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "bikes", force: true do |t|
     t.integer  "bike_id"
@@ -46,10 +63,67 @@ ActiveRecord::Schema.define(version: 20131228205625) do
     t.datetime "updated_at"
   end
 
+  create_table "questions", force: true do |t|
+    t.integer  "survey_id"
+    t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "rit_users", force: true do |t|
     t.integer  "user_id"
     t.string   "rit_email"
     t.boolean  "admin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_answers", force: true do |t|
+    t.integer  "attempt_id"
+    t.integer  "question_id"
+    t.integer  "option_id"
+    t.boolean  "correct"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_attempts", force: true do |t|
+    t.integer "participant_id"
+    t.string  "participant_type"
+    t.integer "survey_id"
+    t.boolean "winner"
+    t.integer "score"
+  end
+
+  create_table "survey_options", force: true do |t|
+    t.integer  "question_id"
+    t.integer  "weight",      default: 0
+    t.string   "text"
+    t.boolean  "correct"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_questions", force: true do |t|
+    t.integer  "survey_id"
+    t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_surveys", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "attempts_number", default: 0
+    t.boolean  "finished",        default: false
+    t.boolean  "active",          default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "surveys", force: true do |t|
+    t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

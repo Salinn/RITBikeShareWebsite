@@ -1,4 +1,12 @@
 RITBikeShareWebsite::Application.routes.draw do
+  resources :attempts
+
+  resources :surveys
+
+  resources :questions
+
+  resources :answers
+
   resources :checked_outs
 
   resources :bikes

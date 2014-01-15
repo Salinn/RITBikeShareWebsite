@@ -1,32 +1,21 @@
 <% provide(:title, 'Quiz') %>
 <h1>Quiz</h1>
 
-<div class="form_row">
-  <label for="theme">How Long Can you Rent a Bike for?:</label>
-  <% [ '1 hour', '12 hours', '1 Day', '7 Days', '1 Month' ].each do |theme| %>
-      <br><%= radio_button_tag 'theme', theme, @theme == theme %>
-      <%= theme.humanize %>
-      <%=  %>
-  <% end %>
-</div>
-<div class="form_row">
-  <label for="theme1">What should you do if you lose your key, lose your lock, or have a similar issue?:</label>
-  <% [ 'Call Residential Life', 'Do nothing', 'Call Dr.Destler', 'Call Student Government' ].each do |theme1| %>
-      <br><%= radio_button_tag 'theme1', theme1, @theme1 == theme1 %>
-      <%= theme1.humanize %>
-  <% end %>
-</div>
-<div class="form_row">
-  <label for="theme2">How much do you pay for a minor issue that occurs when you took the bike out?:</label>
-  <% [ '50 Dollars', '20 Dollars', '5 Dollars', 'Nothing' ].each do |theme2| %>
-      <br><%= radio_button_tag 'theme2', theme2, @theme2 == theme2 %>
-      <%= theme2.humanize %>
-  <% end %>
-</div>
-<div class="form_row">
-  <label for="theme3">Where do you check these bikes out from?:</label>
-  <% [ 'Global Village', 'Residential Office in the Gleason Dorm', 'Java Wallies', 'The Gym' ].each do |theme3| %>
-      <br><%= radio_button_tag 'theme3', theme3, @theme3 == theme3 %>
-      <%= theme3.humanize %>
-  <% end %>
-</div>
+<% @attempt = Attempt.new %>
+<%= form_for(@attempt) do |f| %>
+    <% @survey = Survey.find(1) %>
+    <%= @survey.name %> <br/><br/>
+    <%= @survey.description  %><br/><br/>
+    <% @questions = @survey.questions %>
+    <%= @questions.each do |question|
+      question
+      puts
+      puts
+      end
+        %>
+
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
