@@ -1,19 +1,33 @@
 class StaticPagesController < ApplicationController
   def home
+    authorize! :view, :home
   end
 
   def help
   end
 
-  def contact
+  def about
   end
 
-  def sign_up
+  def contact
   end
 
   def sign_in
   end
 
+  def register
+  end
+
+  def account
+  end
+
+  def quiz
+  end
+
+  def user_home
+  end
+
   def admin_home
+    authorize! :view, :admin_home
   end
 end

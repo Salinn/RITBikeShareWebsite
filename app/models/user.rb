@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def roles? role
+  def role? role
     if self.role == role
       return true
     end
