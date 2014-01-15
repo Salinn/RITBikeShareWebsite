@@ -12,7 +12,7 @@ class Ability
       can :view,:admin_home
     end
     if user.role? "student"
-      can :read, :all
+      can :manage, :all
     end
   end
 end

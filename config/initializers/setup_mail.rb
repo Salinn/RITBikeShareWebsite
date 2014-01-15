@@ -1,9 +1,15 @@
+require "development_mail_interceptor"
+
 ActionMailer::Base.smtp_settings = {
-  :address              => "mymail.ad.rit.edu",
-  :port                 => 587,
-  :domain               => :login,
-  :user_name            => "sgpres@main.ad.rit.edu",
-  :password             => ENV["SGNOREPLY"],
-  :enable_starttls_auto => true
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => "gmail.com",
+    :user_name            => "pmdpkt",
+    :password             => "the hobbit1",
+    :authentication       => "plain",
+    :enable_starttls_auto => true
 }
 
+ActionMailer::Base.perform_deliveries = true
+ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
