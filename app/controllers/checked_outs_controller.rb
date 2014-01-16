@@ -29,7 +29,8 @@ class CheckedOutsController < ApplicationController
     @bike.checked_out=true
     @bike.save
     @user = User.find(@checked_out.bike_user_id)
-    UserMailer.test(@user).deliver
+    UserMailer.over_time_limit(@user).deliver
+    #UserMailer.test(@user).deliver
     @checked_out.checkout_time=DateTime.current
     respond_to do |format|
       if @checked_out.save

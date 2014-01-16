@@ -5,8 +5,7 @@
     <% @survey = Survey.find(1) %>
     <h3><%= @survey.description  %></h3>
     <br/>
-    <% @questions = @survey.questions %>
-    <% @questions.each do |question| %>
+    <% @survey.questions.each do |question| %>
         <h4><%= question.text %></h4>
         <br/>
         <% question.answers.each do |answer| %>

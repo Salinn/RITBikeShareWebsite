@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-    authorize! :view, :home
   end
 
   def help
@@ -28,6 +27,5 @@ class StaticPagesController < ApplicationController
   end
 
   def admin_home
-    authorize! :view, :admin_home
   end
 end
