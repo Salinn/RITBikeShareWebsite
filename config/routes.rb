@@ -1,11 +1,9 @@
 RITBikeShareWebsite::Application.routes.draw do
-  resources :attempts
 
-  resources :surveys
-
-  resources :questions
-
-  resources :answers
+  namespace :contests do
+    resources :surveys
+    resources :attempts, :only => [:new, :create]
+  end
 
   resources :checked_outs
 

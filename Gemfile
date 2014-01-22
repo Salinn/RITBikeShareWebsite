@@ -15,7 +15,8 @@ gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem "cancan"
-gem 'whenever'
+gem 'whenever', :require => false
+gem 'survey', :git => 'git://github.com/runtimerevolution/survey.git'
 
 
 group :doc do
