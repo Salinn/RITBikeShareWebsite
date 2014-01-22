@@ -1,4 +1,4 @@
 class CheckedOut < ActiveRecord::Base
   has_many :bikes
-  has_many :users
+  belongs_to :user
 end

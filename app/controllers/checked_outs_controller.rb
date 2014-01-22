@@ -27,10 +27,10 @@ class CheckedOutsController < ApplicationController
     @checked_out = CheckedOut.new(checked_out_params)
     @bike = Bike.find_all_by_bike_id(@checked_out.bike_id).first
     @bike.checked_out=true
-    @checked_out.bike_user_id=User.find_by_email(@checked_out.bike_user_id).id
+    @checked_out.user=User.find_by_email(@checked_out.user)
     @bike.save
-    @user = User.find(@checked_out.bike_user_id)
-    UserMailer.over_time_limit(@user).deliver
+    @user = User.find(@checked_out.user)
+    UserMailer.over_time_limit(@checked_out.user).deliver
     #UserMailer.test(@user).deliver
     @checked_out.checkout_time=DateTime.current
     respond_to do |format|

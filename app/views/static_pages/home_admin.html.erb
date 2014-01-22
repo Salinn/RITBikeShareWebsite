@@ -14,10 +14,10 @@
           </ul>
         </div>
     <% end %>
-    <div class="field">//
+    <div class="field">
       <div class="field">
-      <%= f.label :bike_user_id %><br>
-      <%= f.text_field :bike_user_id %>
+      <%= f.label :user %><br>
+      <%= f.text_field :user %>
     </div>
       <%= f.label :bike_id %><br>
       <%= f.number_field :bike_id %>
@@ -30,12 +30,8 @@
 <table>
   <thead>
   <tr>
-    <th>Bike user___</th>
+    <th>User___</th>
     <th>Bike___</th>
-    <th>Checkout time___</th>
-    <th>Checkin time___</th>
-    <th>Fixed___</th>
-    <th>Problem</th>
     <th></th>
     <th></th>
     <th></th>
@@ -46,14 +42,9 @@
   <% @checked_outs = not_cheched_in %>
   <% @checked_outs.each do |checked_out| %>
       <tr>
-        <td><%= checked_out.bike_user_id %></td>
+        <td><%= checked_out.user.login %></td>
         <td><%= checked_out.bike_id %></td>
-        <td><%= checked_out.checkout_time %></td>
-        <td><%= checked_out.checkin_time %></td>
-        <td><%= checked_out.fixed %></td>
-        <td><%= checked_out.problem %></td>
         <td><%= link_to 'Check Out', edit_checked_out_path(checked_out) %></td>
-        <td><%= link_to 'Destroy', checked_out, method: :delete %></td>
       </tr>
   <% end %>
   </tbody>

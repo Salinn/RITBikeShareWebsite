@@ -3,8 +3,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :ldap_authenticatable, :rememberable, :trackable
-  belongs_to :checked_out
-  has_many :attempts
+  has_many :checked_out
   ROLES = %w[admin student]
   before_save do
     #entry = Devise::LDAP::Adapter.get_ldap_entry(self.login)

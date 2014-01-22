@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115190543) do
+ActiveRecord::Schema.define(version: 20140122181925) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140115190543) do
   end
 
   create_table "checked_outs", force: true do |t|
-    t.integer  "bike_user_id"
+    t.integer  "user_id"
     t.integer  "bike_id"
     t.datetime "checkout_time"
     t.datetime "checkin_time"
