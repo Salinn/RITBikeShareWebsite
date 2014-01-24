@@ -19,8 +19,8 @@
           <% end %>
           <li><%= link_to "FAQ",    help_path %></li>
           <% if user_signed_in? %>
-              <% if false %>
-                  <li><%=  link_to "Account", account_path %></li>
+              <% if current_user.registered %>
+                  <li><%=  link_to "Account", current_user %></li>
               <% else %>
                   <li><%=  link_to "Register", quiz_path %></li>
               <% end %>

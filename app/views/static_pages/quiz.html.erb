@@ -4,12 +4,12 @@
 <% @survey = Survey::Survey.find(1) %>
 <% if @survey.nil? %>
     <p>
-      <%= @user.email %> there are not Active Surveys right now.
+      <%= current_user.email %> there are not Active Surveys right now.
     </p>
-<% elsif @survey.avaliable_for_participant?(@user) %>
+<% elsif @survey.avaliable_for_participant?(current_user) %>
     <%= render 'contests/attempts/form' %>
 <% else %>
     <p>
-      <%= @user.email %> spent all the possible attempts to answer this Survey
+      <%= current_user.email %> spent all the possible attempts to answer this Survey
     </p>
 <% end -%>
