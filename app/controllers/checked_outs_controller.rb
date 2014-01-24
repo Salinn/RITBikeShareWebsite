@@ -1,5 +1,6 @@
 class CheckedOutsController < ApplicationController
   before_action :set_checked_out, only: [:show, :edit, :update, :destroy]
+  #before_save :find_user_with_email
 
   # GET /checked_outs
   # GET /checked_outs.json
@@ -24,18 +25,12 @@ class CheckedOutsController < ApplicationController
   # POST /checked_outs
   # POST /checked_outs.json
   def create
-    @checked_out = CheckedOut.new(checked_out_params)
-    @bike = Bike.find_all_by_bike_id(@checked_out.bike_id).first
-    @bike.checked_out=true
-    @checked_out.user=User.find_by_email(@checked_out.user)
-    @bike.save
-    @user = User.find(@checked_out.user)
-    UserMailer.over_time_limit(@checked_out.user).deliver
-    #UserMailer.test(@user).deliver
-    @checked_out.checkout_time=DateTime.current
+    create_checkout_values
+    update_bike_values
+
     respond_to do |format|
       if @checked_out.save
-        format.html { redirect_to admin_home_path, notice: "The bike was successfully checked out by #{@user.email}." }
+        format.html { redirect_to admin_home_path, notice: "#{}The bike was  #{checked_out_params}successfully checked out by #{@checked_out.user.email}." }
         format.json { render action: 'show', status: :created, location: @checked_out }
       else
         format.html { render action: 'new' }
@@ -78,8 +73,20 @@ class CheckedOutsController < ApplicationController
     @checked_out = CheckedOut.find(params[:id])
   end
 
+  def create_checkout_values
+    @checked_out = CheckedOut.new
+    @checked_out.bike_id=checked_out_params[:bike_id]
+    @checked_out.user=User.find_by_login(checked_out_params[:user])
+    @checked_out.checkout_time=DateTime.current
+  end
+  def update_bike_values
+    @bike = Bike.find_by_bike_id(@checked_out.bike_id)
+    @bike.checked_out=true
+    @bike.save
+  end
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def checked_out_params
-    params.require(:checked_out).permit(:bike_id, :checkout_time, :checkin_time, :fixed, :problem)
+    params.require(:checked_out).permit(:user, :bike_id, :checkout_time, :checkin_time, :fixed, :problem)
   end
 end
