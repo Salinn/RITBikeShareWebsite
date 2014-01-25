@@ -1,9 +1,6 @@
 <% provide(:title, 'Register') %>
 <h1>Register</h1>
 
-<%= form_for RitUser.new do |f| %>
-    <% @user = RitUser.where(rit_email: "pmd6624@rit.edu") %>
-
     <% url = "https://drive.google.com/file/d/0BxFVFuWCRDh5QlZ4Y29kaHVjV2M/edit?usp=sharing" %>
 
     <iframe src=<%= url %>&embedded=true" style="width:920px; height:800px;"></iframe>
@@ -12,10 +9,11 @@
     If you cannot see the above pdf please <a href="https://drive.google.com/a/g.rit.edu/file/d/0BxFVFuWCRDh5QlZ4Y29kaHVjV2M/edit?usp=sharing">
        click here </a>
     <br/>
-    <%= label_tag(:legal_age, "By checking this box I am acknowledging that I am 18 years or older") %>
-    <%= check_box_tag(:legal_age) %>
     <br/>
     <br/>
-
-    <div><%= f.submit "Register" %></div>
+<%= form_for(@user) do |f| %>
+    <%= @user.login %>
+    <%= f.label :registered, "By checking this box I am acknowledging that I am 18 years or older" %><br>
+    <%= f.check_box :registered %>
+    <%= f.submit %>
 <% end %>

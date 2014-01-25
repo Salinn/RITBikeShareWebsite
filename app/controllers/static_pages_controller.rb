@@ -15,6 +15,7 @@ class StaticPagesController < ApplicationController
   end
 
   def register
+    @user = current_user
   end
 
   def account

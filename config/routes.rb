@@ -24,7 +24,8 @@ RITBikeShareWebsite::Application.routes.draw do
   get 'user_home', to: "static_pages#home_user"
   get 'admin_home', to: "static_pages#home_admin"
 
-  get '/users/:id', :to => 'users#show', :as => :user
+  #get '/users/:id', :to => 'users#show', :as => :user
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

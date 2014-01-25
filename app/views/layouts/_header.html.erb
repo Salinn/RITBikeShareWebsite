@@ -22,7 +22,7 @@
               <% if current_user.registered %>
                   <li><%=  link_to "Account", current_user %></li>
               <% else %>
-                  <li><%=  link_to "Register", quiz_path %></li>
+                  <li><%=  link_to "Register", register_path %></li>
               <% end %>
               <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
           <% else %>
