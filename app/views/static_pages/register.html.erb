@@ -12,8 +12,7 @@
     <br/>
     <br/>
 <%= form_for(@user) do |f| %>
-    <%= @user.login %>
-    <%= f.label :registered, "By checking this box I am acknowledging that I am 18 years or older" %><br>
-    <%= f.check_box :registered %>
+    <h4><%= f.check_box :registered %>By checking this box I am acknowledging that I am 18 years or older"</h4>
+    <br/><br/>
     <%= f.submit %>
 <% end %>

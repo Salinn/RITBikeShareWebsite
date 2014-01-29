@@ -1,3 +1,4 @@
+<% provide(:title, 'Check Bike In') %>
 <%= form_for(@checked_out) do |f| %>
   <% if @checked_out.errors.any? %>
     <div id="error_explanation">
@@ -12,7 +13,7 @@
   <% end %>
   <div class="field">
     <%= f.label :bike_id %><br>
-    <%= f.number_field :bike_id %>
+    <%= f.number_field :bike_id, :readonly => true %>
   </div>
   <div class="field">
     <%= f.label :fixed %><br>
@@ -23,6 +24,6 @@
     <%= f.text_area :problem %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Check Bike In" %>
   </div>
 <% end %>

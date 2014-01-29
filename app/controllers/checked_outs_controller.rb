@@ -26,14 +26,14 @@ class CheckedOutsController < ApplicationController
   # POST /checked_outs.json
   def create
     create_checkout_values
-    update_bike_values
 
     respond_to do |format|
       if @checked_out.save
-        format.html { redirect_to admin_home_path, notice: "#{}The bike was  #{checked_out_params}successfully checked out by #{@checked_out.user.email}." }
+        update_bike_values
+        format.html { redirect_to admin_home_path, notice: "The bike was successfully checked out by #{@checked_out.user.email}." }
         format.json { render action: 'show', status: :created, location: @checked_out }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to admin_home_path, :flash => @checked_out.errors }
         format.json { render json: @checked_out.errors, status: :unprocessable_entity }
       end
     end
@@ -52,7 +52,7 @@ class CheckedOutsController < ApplicationController
         format.json { render json: @checked_out.errors, status: :unprocessable_entity }
       end
     end
-    @bike = Bike.find_all_by_bike_id(@checked_out.bike_id).first
+    @bike = Bike.find_by_bike_id(@checked_out.bike_id)
     @bike.checked_out=false
     @bike.save
   end

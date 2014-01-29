@@ -30,7 +30,7 @@
 <table>
   <thead>
   <tr>
-    <th>User___</th>
+    <th>User_____________</th>
     <th>Bike___</th>
     <th></th>
     <th></th>
@@ -44,7 +44,7 @@
       <tr>
         <td><%= checked_out.user.login %></td>
         <td><%= checked_out.bike_id %></td>
-        <td><%= link_to 'Check Out', edit_checked_out_path(checked_out) %></td>
+        <td><%= link_to 'Check Bike In', edit_checked_out_path(checked_out) %></td>
       </tr>
   <% end %>
   </tbody>
