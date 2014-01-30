@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140124184059) do
+ActiveRecord::Schema.define(version: 20140129234529) do
 
   create_table "bikes", force: true do |t|
     t.integer  "bike_id"
@@ -71,14 +71,6 @@ ActiveRecord::Schema.define(version: 20140124184059) do
     t.integer  "attempts_number", default: 0
     t.boolean  "finished",        default: false
     t.boolean  "active",          default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "transactions", force: true do |t|
-    t.string   "title"
-    t.float    "total"
-    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -8,7 +8,6 @@ class Ability
       can :manage, :all
     end
     if user.role? "student"
-      can :manage, :all
       can :show, User do |user_page|
         user_page.try(:user) == user
       end

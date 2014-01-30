@@ -4,11 +4,26 @@
   <strong>Bike:</strong>
   <%= @user.login %>
 </p>
+
 <p>
   <strong>Total Number of bikes rented:</strong>
-  <%= @rented.size %>
+  <%= @user.checked_out.size %>
 </p>
-<p>
-  <strong>Bike currently being rented?</strong>
-  <%= @checked_out %>
-</p>
+
+<% if @checked_out != "No bike is currently checked out to you" %>
+    <p>
+      <strong>Bike currently being rented is?</strong>
+      <%= @checked_out.bike_id %>
+    </p>
+
+    <p>
+      <strong>Bike currently being rented is due back in</strong>
+      <%= "hi" %>
+    </p>
+<% else %>
+    <p>
+      <strong>Bike currently being rented is?</strong>
+      <%= @checked_out %>
+    </p>
+<% end %>
+

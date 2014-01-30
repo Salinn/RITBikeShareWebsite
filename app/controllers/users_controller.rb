@@ -4,14 +4,15 @@ class UsersController < ApplicationController
   respond_to :html, :json
   def show
     @user = User.find(params[:id])
-    @rented = @user.checked_out
+
     bikes_checkedouts = CheckedOut.order(:bike_id).find_all_by_checkin_time(nil)
     bikes_checkedouts.each do |check_out|
-      if check_out.user_id == @user
-        @checked_out=check_out.bike_id
-      else
-        @checked_out="tits"
+      if check_out.user == @user
+        @checked_out=CheckedOut.find_by_bike_id(check_out.bike_id)
       end
+    end
+    if @checked_out == nil
+      @checked_out = "No bike is currently checked out to you"
     end
     @current_time = DateTime.current
 
