@@ -1,5 +1,7 @@
 RITBikeShareWebsite::Application.routes.draw do
 
+  resources :transactions
+
   namespace :contests do
     resources :surveys
     resources :attempts, :only => [:new, :create]

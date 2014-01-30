@@ -3,19 +3,7 @@ class UsersController < ApplicationController
   before_filter :validate_url_hack
   respond_to :html, :json
   def show
-    @user = User.find(params[:id])
-
-    bikes_checkedouts = CheckedOut.order(:bike_id).find_all_by_checkin_time(nil)
-    bikes_checkedouts.each do |check_out|
-      if check_out.user == @user
-        @checked_out=CheckedOut.find_by_bike_id(check_out.bike_id)
-      end
-    end
-    if @checked_out == nil
-      @checked_out = "No bike is currently checked out to you"
-    end
-    @current_time = DateTime.current
-
+    @accessible = set_up_show
   end
 
   def create
@@ -49,6 +37,23 @@ class UsersController < ApplicationController
           redirect_to root_path, notice: "You do not have access to thi individuals accountss."
         end
       end
+    end
+
+    def set_up_show
+      @user = User.find(params[:id])
+
+      bikes_checked_outs = CheckedOut.order(:bike_id).find_all_by_checkin_time(nil)
+      bikes_checked_outs.each do |check_out|
+        if check_out.user == @user
+          @checked_out=CheckedOut.find_by_bike_id(check_out.bike_id)
+        end
+      end
+      if @checked_out == nil
+        @checked_out = "No bike is currently checked out to you"
+      end
+      @current_time = DateTime.current
+      @transaction = Transaction.find_all_by_user_id(@user)
+      accessible = { :user => @user, :check_out => @checked_out, :transaction => @transaction}
     end
 
     def update_user_more

@@ -1,0 +1,35 @@
+<h1>Listing transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date of charge</th>
+      <th>Charge amount</th>
+      <th>Description of charge</th>
+      <th>Pending</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.date_of_charge %></td>
+        <td><%= transaction.charge_amount %></td>
+        <td><%= transaction.description_of_charge %></td>
+        <td><%= transaction.pending %></td>
+        <td><%= transaction.user_id %></td>
+        <td><%= link_to 'Show', transaction %></td>
+        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transaction', new_transaction_path %>

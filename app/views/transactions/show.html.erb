@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date of charge:</strong>
+  <%= @transaction.date_of_charge %>
+</p>
+
+<p>
+  <strong>Charge amount:</strong>
+  <%= @transaction.charge_amount %>
+</p>
+
+<p>
+  <strong>Description of charge:</strong>
+  <%= @transaction.description_of_charge %>
+</p>
+
+<p>
+  <strong>Pending:</strong>
+  <%= @transaction.pending %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @transaction.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
+<%= link_to 'Back', transactions_path %>

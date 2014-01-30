@@ -1,19 +1,19 @@
 <% provide(:title, 'Account') %>
 <h1>User Accounts</h1>
-<p>
-  <strong>Bike:</strong>
-  <%= @user.login %>
-</p>
+
+<% user = @accessible[:user]%>
+<% checked_out=@accessible[:check_out]%>
+<% transactions = @accessible[:transaction]%>
 
 <p>
-  <strong>Total Number of bikes rented:</strong>
-  <%= @user.checked_out.size %>
+  <strong>Total number of bikes rented:</strong>
+  <%= user.checked_out.size %>
 </p>
 
-<% if @checked_out != "No bike is currently checked out to you" %>
+<% if checked_out != "No bike is currently checked out to you" %>
     <p>
-      <strong>Bike currently being rented is?</strong>
-      <%= @checked_out.bike_id %>
+      <strong>Do I have a bike Checked out?  </strong>
+      <%= "Yes" %>
     </p>
 
     <p>
@@ -23,7 +23,35 @@
 <% else %>
     <p>
       <strong>Bike currently being rented is?</strong>
-      <%= @checked_out %>
+      <%= checked_out %>
     </p>
 <% end %>
 
+<h3 style="text-align: center;">Charges to account</h3>
+
+<table>
+  <thead>
+  <tr>
+    <th>Date of charge_____</th>
+    <th>Charge amount_____</th>
+    <th>Description of charge_________</th>
+    <th>Pending_____</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.date_of_charge %></td>
+        <td><%= transaction.charge_amount %></td>
+        <td><%= transaction.description_of_charge %></td>
+        <% if transaction.pending? %>
+            <td><%= "Pending" %></td>
+        <% end %>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_of_charge: 2014-01-30
+  charge_amount: 1.5
+  description_of_charge: MyString
+  pending: false
+  user_id: 1
+
+two:
+  date_of_charge: 2014-01-30
+  charge_amount: 1.5
+  description_of_charge: MyString
+  pending: false
+  user_id: 1
