@@ -1,6 +1,6 @@
 <% provide(:title, 'Account') %>
-<h1>User Accounts</h1>
-
+<h1>Your Bike Share Account</h1>
+<h3 style="text-align: center;">There are currently <%= number_of_bikes_left %> that can be checked out</h3>
 <% user = @accessible[:user]%>
 <% checked_out=@accessible[:check_out]%>
 <% transactions = @accessible[:transaction]%>
@@ -35,7 +35,7 @@
     <th>Date of charge_____</th>
     <th>Charge amount_____</th>
     <th>Description of charge_________</th>
-    <th>Pending_____</th>
+    <th>Pending</th>
     <th></th>
     <th></th>
     <th></th>
