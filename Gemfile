@@ -17,6 +17,7 @@ gem "twitter-bootstrap-rails"
 gem "cancan"
 gem 'survey', :git => 'git://github.com/runtimerevolution/survey.git'
 gem 'whenever', :require => false
+gem 'rails_admin'
 
 
 group :doc do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130173349) do
+ActiveRecord::Schema.define(version: 20140204015028) do
 
   create_table "bikes", force: true do |t|
     t.integer  "bike_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140130173349) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "checked_out"
+    t.text     "problem_description"
   end
 
   create_table "checked_outs", force: true do |t|
@@ -31,6 +32,19 @@ ActiveRecord::Schema.define(version: 20140130173349) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "rails_admin_histories", force: true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      limit: 2
+    t.integer  "year",       limit: 5
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
 
   create_table "survey_answers", force: true do |t|
     t.integer  "attempt_id"

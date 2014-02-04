@@ -1,5 +1,6 @@
 RITBikeShareWebsite::Application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :transactions
 
   namespace :contests do
@@ -22,7 +23,7 @@ RITBikeShareWebsite::Application.routes.draw do
   get 'account', to: "static_pages#account"
   get 'quiz', to: "static_pages#quiz"
   get 'user_home', to: "static_pages#home_user"
-  get 'admin_home', to: "static_pages#home_admin"
+  get 'home_check_out', to: "static_pages#home_admin"
 
   #get '/users/:id', :to => 'users#show', :as => :user
   resources :users

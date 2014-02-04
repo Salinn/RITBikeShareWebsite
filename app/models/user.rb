@@ -8,7 +8,11 @@ class User < ActiveRecord::Base
   before_save do
     #entry = Devise::LDAP::Adapter.get_ldap_entry(self.login)
     #self.name = entry[:displayname][0]
-    self.role= "student"
+    if self.admin?
+      self.role= "admin"
+    else
+      self.role= "student"
+    end
   end
   def roles=(roles)
     self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)

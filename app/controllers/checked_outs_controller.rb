@@ -29,11 +29,11 @@ class CheckedOutsController < ApplicationController
 
     respond_to do |format|
       if @checked_out.save
-        update_bike_values
-        format.html { redirect_to admin_home_path, notice: "The bike was successfully checked out by #{@checked_out.user.email}." }
+        create_bike_values
+        format.html { redirect_to home_check_out_path, notice: "The bike was successfully checked out by #{@checked_out.user.email}." }
         format.json { render action: 'show', status: :created, location: @checked_out }
       else
-        format.html { redirect_to admin_home_path, :flash => @checked_out.errors }
+        format.html { redirect_to home_check_out_path, :flash => @checked_out.errors }
         format.json { render json: @checked_out.errors, status: :unprocessable_entity }
       end
     end
@@ -45,16 +45,14 @@ class CheckedOutsController < ApplicationController
     @checked_out.checkin_time=DateTime.current
     respond_to do |format|
       if @checked_out.update(checked_out_params)
-        format.html { redirect_to admin_home_path, notice: 'The bike was successfully checked in.' }
+
+        format.html { redirect_to home_check_out_path, notice: 'The bike was successfully checked in.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @checked_out.errors, status: :unprocessable_entity }
       end
     end
-    @bike = Bike.find_by_bike_id(@checked_out.bike_id)
-    @bike.checked_out=false
-    @bike.save
   end
 
   # DELETE /checked_outs/1
@@ -79,12 +77,22 @@ class CheckedOutsController < ApplicationController
     @checked_out.user=User.find_by_login(checked_out_params[:user])
     @checked_out.checkout_time=DateTime.current
   end
-  def update_bike_values
+
+  def create_bike_values
     @bike = Bike.find_by_bike_id(@checked_out.bike_id)
     @bike.checked_out=true
     @bike.save
   end
 
+  def update_bike_values
+    @bike = Bike.find_by_bike_id(@checked_out.bike_id)
+    @bike.checked_out=false
+    if @checked_out.fixed
+      @bike.problem_description = @checked_out.problem
+      @bike.need_repair = @checked_out.fixed
+    end
+    @bike.save
+  end
   # Never trust parameters from the scary internet, only allow the white list through.
   def checked_out_params
     params.require(:checked_out).permit(:user, :bike_id, :checkout_time, :checkin_time, :fixed, :problem)

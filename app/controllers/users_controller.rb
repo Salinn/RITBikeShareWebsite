@@ -14,11 +14,11 @@ class UsersController < ApplicationController
 
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.update(user_params) && user_params["registered"] == "1"
         update_user_more
         format.html { redirect_to user_home_path, notice: 'You have successfully registered!' }
       else
-        format.html { redirect_to user_home_path, notice: 'Something went wrong. Please send an email to sgpres@rit.edu' }
+        format.html { redirect_to register_path, notice: 'You need to check the box to register your account' }
       end
     end
   end
