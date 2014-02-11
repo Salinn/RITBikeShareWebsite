@@ -24,11 +24,10 @@ class MaintenanceReportsController < ApplicationController
   # POST /maintenance_reports
   # POST /maintenance_reports.json
   def create
-    @maintenance_report = MaintenanceReport.new(maintenance_report_params)
-
+    create_maintenance_report
     respond_to do |format|
       if @maintenance_report.save
-        format.html { redirect_to @maintenance_report, notice: 'Maintenance report was successfully created.' }
+        format.html { redirect_to user_home_path, notice: 'Maintenance report was successfully created.' }
         format.json { render action: 'show', status: :created, location: @maintenance_report }
       else
         format.html { render action: 'new' }
@@ -67,8 +66,18 @@ class MaintenanceReportsController < ApplicationController
       @maintenance_report = MaintenanceReport.find(params[:id])
     end
 
+    def create_maintenance_report
+      @maintenance_report = MaintenanceReport.new
+      bike = Bike.find_by_bike_id(maintenance_report_params[:bike_id])
+      @maintenance_report.bike_id = bike
+      @maintenance_report.user_id = current_user
+      @maintenance_report.report  = maintenance_report_params[:report]
+      @maintenance_report.problem_before_maintenance = bike.problem_description
+      @maintenance_report.save
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def maintenance_report_params
-      params[:maintenance_report]
+      params.require(:maintenance_report).permit(:bike_id, :report)
     end
 end

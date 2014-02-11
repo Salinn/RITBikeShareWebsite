@@ -10,7 +10,7 @@
       <% end %>
       <nav>
         <ul class="nav pull-right">
-          <% if user_signed_in? && current_user.admin %>
+          <% if user_signed_in? && (current_user.admin || current_user.checkout_person )%>
               <li><%= link_to "Home",    home_check_out_path %></li>
           <% elsif user_signed_in? %>
               <li><%= link_to "Home",    user_home_path %></li>
@@ -23,6 +23,9 @@
                   <li><%=  link_to "Account", current_user %></li>
               <% else %>
                   <li><%=  link_to "Register", register_path %></li>
+              <% end %>
+              <% if current_user.repairman %>
+                  <li><%= link_to "Reports", reports_path %></li>
               <% end %>
               <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
           <% else %>

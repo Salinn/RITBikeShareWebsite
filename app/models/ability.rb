@@ -14,6 +14,7 @@ class Ability
 
     if user.role? "repairman"
       can :show, User, :id => user.id
+      can :create, MaintenanceReport
     end
 
     if user.role? "checkout_person"
