@@ -23,28 +23,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="16" selection-start="438" selection-end="438" vertical-scroll-proportion="0.21208227" vertical-offset="0" max-vertical-offset="778">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ability.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/ability.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="schema.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/schema.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="31" selection-start="3644" selection-end="3659" vertical-scroll-proportion="0.0" vertical-offset="1040" max-vertical-offset="1935">
+            <state line="26" column="23" selection-start="1115" selection-end="1122" vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="1935">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20140211204808_create_maintenance_reports.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20140211204808_create_maintenance_reports.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="43" selection-start="232" selection-end="232" vertical-scroll-proportion="0.11568123" vertical-offset="0" max-vertical-offset="778">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20131227205400_create_bikes.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20131227205400_create_bikes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
               <folding />
             </state>
           </provider>
@@ -100,6 +100,8 @@
         <option value="$PROJECT_DIR$/db/migrate/20140211191827_add_repairman_and_checkout_person_users.rb" />
         <option value="$PROJECT_DIR$/app/models/ability.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20140211203811_create_maintance_reports.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20140211204808_create_maintenance_reports.rb" />
       </list>
     </option>
   </component>
@@ -179,7 +181,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -194,10 +200,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -435,16 +437,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="754" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/bikes_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="754" />
@@ -634,13 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home_admin.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="23" selection-start="524" selection-end="524" vertical-scroll-proportion="0.1369863" vertical-offset="140" max-vertical-offset="870">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/bike.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="55" selection-start="87" selection-end="87" vertical-scroll-proportion="0.019280206" vertical-offset="0" max-vertical-offset="778">
@@ -711,23 +696,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="25" selection-start="471" selection-end="471" vertical-scroll-proportion="0.2387268" vertical-offset="0" max-vertical-offset="754">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home_admin.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="14" selection-start="573" selection-end="573" vertical-scroll-proportion="0.369863" vertical-offset="0" max-vertical-offset="870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/ability.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+        <state line="9" column="0" selection-start="158" selection-end="158" vertical-scroll-proportion="0.17352185" vertical-offset="0" max-vertical-offset="778">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20131227205400_create_bikes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="754">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="31" selection-start="3644" selection-end="3659" vertical-scroll-proportion="0.0" vertical-offset="1040" max-vertical-offset="1935">
+        <state line="26" column="23" selection-start="1115" selection-end="1122" vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="1935">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20140211204808_create_maintenance_reports.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="16" selection-start="438" selection-end="438" vertical-scroll-proportion="0.21208227" vertical-offset="0" max-vertical-offset="778">
+        <state line="6" column="43" selection-start="232" selection-end="232" vertical-scroll-proportion="0.11568123" vertical-offset="0" max-vertical-offset="778">
           <folding />
         </state>
       </provider>

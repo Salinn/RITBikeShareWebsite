@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211191827) do
+ActiveRecord::Schema.define(version: 20140211204808) do
 
   create_table "bikes", force: true do |t|
     t.integer  "bike_id"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20140211191827) do
     t.datetime "checkin_time"
     t.boolean  "fixed"
     t.text     "problem"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "maintenance_reports", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "bike_id"
+    t.text     "report"
+    t.text     "problem_before_maintenance"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

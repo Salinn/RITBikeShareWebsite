@@ -1,6 +1,8 @@
 RITBikeShareWebsite::Application.routes.draw do
 
   
+  resources :maintenance_reports
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :transactions
 
