@@ -9,9 +9,13 @@ class User < ActiveRecord::Base
     #entry = Devise::LDAP::Adapter.get_ldap_entry(self.login)
     #self.name = entry[:displayname][0]
     if self.admin?
-      self.role= "admin"
+      self.role="admin"
+    elsif self.repairman?
+      self.role="repairman"
+    elsif self.checkout_person?
+      self.role="checkout_person"
     else
-      self.role= "student"
+      self.role="student"
     end
   end
   def roles=(roles)
