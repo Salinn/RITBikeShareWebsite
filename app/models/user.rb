@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :ldap_authenticatable, :rememberable, :trackable
   has_many :checked_out
+  has_many :maintenance_reports
+  has_many :transactions
+  has_many :bikes
+
   ROLES = %w[admin student repairman]
   before_save do
     #entry = Devise::LDAP::Adapter.get_ldap_entry(self.login)
