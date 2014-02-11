@@ -10,7 +10,7 @@
   <%= user.checked_out.size %>
 </p>
 
-<% if checked_out != "No bike is currently checked out to you" %>
+<% if checked_out != "No" %>
     <p>
       <strong>Do I have a bike Checked out?  </strong>
       <%= "Yes" %>
@@ -18,7 +18,7 @@
 
     <p>
       <strong>Bike currently being rented is due back in</strong>
-      <%= "hi" %>
+      <%= checked_out.checkout_time.strftime("%I:%M %p") %>
     </p>
 <% else %>
     <p>

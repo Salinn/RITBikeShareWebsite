@@ -10,5 +10,9 @@ class Ability
     if user.role? "student"
       can :show, User, :id => user.id
     end
+    if user.role? "repairman"
+      can :show, User, :id => user.id
+
+    end
   end
 end

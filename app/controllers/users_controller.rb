@@ -50,7 +50,7 @@ class UsersController < ApplicationController
         end
       end
       if @checked_out == nil
-        @checked_out = "No bike is currently checked out to you"
+        @checked_out = "No"
       end
       @current_time = DateTime.current
       @transaction = Transaction.find_all_by_user_id(@user)
