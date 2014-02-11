@@ -74,7 +74,7 @@ class CheckedOutsController < ApplicationController
   def create_checkout_values
     @checked_out = CheckedOut.new
     @checked_out.bike_id=checked_out_params[:bike_id]
-    @checked_out.user=User.find_by_login(checked_out_params[:user])
+    @checked_out.user=User.find_by_login(checked_out_params[:user_id])
     @checked_out.checkout_time=DateTime.current
   end
 
@@ -95,6 +95,6 @@ class CheckedOutsController < ApplicationController
   end
   # Never trust parameters from the scary internet, only allow the white list through.
   def checked_out_params
-    params.require(:checked_out).permit(:user, :bike_id, :checkout_time, :checkin_time, :fixed, :problem)
+    params.require(:checked_out).permit(:user_id, :bike_id, :checkout_time, :checkin_time, :fixed, :problem)
   end
 end
