@@ -3,4 +3,27 @@
 <h3>
   There are currently <%=number_of_bikes_left %> bikes that are available to be checked out currently
 </h3>
+
+<% @feedback_form = FeedbackForm.new %>
+<%= form_for(@feedback_form) do |f| %>
+    <% if @feedback_form.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@feedback_form.errors.count, "error") %> prohibited this feedback_form from being saved:</h2>
+
+          <ul>
+            <% @feedback_form.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :feedback %><br>
+      <%= f.text_area :feedback %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
 <%= image_tag "RITTiger.jpg", {style: "margin-left:340px; text-align:center; vertical-align:middle;" } %>
