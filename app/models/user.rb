@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :ldap_authenticatable, :rememberable, :trackable
   has_many :checked_out
-  ROLES = %w[admin student]
+  ROLES = %w[admin student repairman]
   before_save do
     #entry = Devise::LDAP::Adapter.get_ldap_entry(self.login)
     #self.name = entry[:displayname][0]

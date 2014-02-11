@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_filter :validate_url_hack
+  #before_filter :validate_url_hack
+  load_and_authorize_resource
   respond_to :html, :json
   def show
     @accessible = set_up_show

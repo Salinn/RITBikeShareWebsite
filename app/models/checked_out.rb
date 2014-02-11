@@ -27,7 +27,7 @@ class CheckedOut < ActiveRecord::Base
   end
 
   def check_if_bike_needs_repair
-    bike = Bike.find_by_bike_id(:bike_id)
+    bike = Bike.find_by_bike_id(bike_id)
     if bike.need_repair?
       self.errors.add(:base, "That bike is being repaired")
       return false

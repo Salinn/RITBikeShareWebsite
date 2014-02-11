@@ -1,7 +1,7 @@
 class CheckedOutsController < ApplicationController
   before_action :set_checked_out, only: [:show, :edit, :update, :destroy]
-  #before_save :find_user_with_email
-
+  #before_save :find_user_with_email\
+  load_and_authorize_resource
   # GET /checked_outs
   # GET /checked_outs.json
   def index
@@ -45,7 +45,7 @@ class CheckedOutsController < ApplicationController
     @checked_out.checkin_time=DateTime.current
     respond_to do |format|
       if @checked_out.update(checked_out_params)
-
+        update_bike_values
         format.html { redirect_to home_check_out_path, notice: 'The bike was successfully checked in.' }
         format.json { head :no_content }
       else
