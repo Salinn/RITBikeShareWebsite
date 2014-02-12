@@ -6,7 +6,7 @@ class CheckedOut < ActiveRecord::Base
                                                   make sure account has been created" }
   validates :bike_id, :presence => { :message => "A bike number needs to be inputed to be checked out" }
   validate :user_not_checked_out, :on => :create
-  validate :check_if_bike_needs_repair, :on => :create
+  #validate :check_if_bike_needs_repair, :on => :create
 
   private
 
@@ -26,13 +26,15 @@ class CheckedOut < ActiveRecord::Base
     true
   end
 
+=begin
   def check_if_bike_needs_repair
-    bike = Bike.find_by_bike_id(bike_id)
-    if bike.need_repair?
+    bike = Bike.find_by_bike_id(:bike_id)
+    if bike.need_repair
       self.errors.add(:base, "That bike is being repaired")
       return false
     end
 
     true
   end
+=end
 end

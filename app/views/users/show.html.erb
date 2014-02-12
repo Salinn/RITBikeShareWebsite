@@ -17,8 +17,11 @@
     </p>
 
     <p>
-      <strong>Bike currently being rented is due back in</strong>
-      <%= checked_out.checkout_time.strftime("%I:%M %p") %>
+      <strong>Bike currently being rented is due back in</strong><br/>
+      <% a = DateTime.new(2009, 10, 13, 12, 0, 0) - DateTime.new(2009, 10, 11, 0, 0, 0) %>
+      <%= (a * 24 * 60).to_i  %><br/>
+      <%= (checked_out.checkout_time+86400).strftime("%I:%M %p") %><br/>
+      <%= (DateTime.current).strftime("%I:%M %p") %>
     </p>
 <% else %>
     <p>

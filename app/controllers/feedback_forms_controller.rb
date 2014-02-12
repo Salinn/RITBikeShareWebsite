@@ -31,7 +31,7 @@ class FeedbackFormsController < ApplicationController
         format.html { redirect_to @feedback_form, notice: 'Feedback form was successfully created.' }
         format.json { render action: 'show', status: :created, location: @feedback_form }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to user_home_path, :flash => @feedback_form.errors }
         format.json { render json: @feedback_form.errors, status: :unprocessable_entity }
       end
     end
