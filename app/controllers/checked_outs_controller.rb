@@ -76,6 +76,7 @@ class CheckedOutsController < ApplicationController
     @checked_out.bike_id=checked_out_params[:bike_id]
     @checked_out.user=User.find_by_login(checked_out_params[:user_id])
     @checked_out.checkout_time=DateTime.current
+    @checked_out.checkin_time.change(:offset => "+3000")
   end
 
   def create_bike_values

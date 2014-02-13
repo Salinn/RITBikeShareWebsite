@@ -10,15 +10,18 @@ class Ability
 
     if user.role? "student"
       can :show, User, :id => user.id
+      can :update, User, :id => user.id
     end
 
     if user.role? "repairman"
       can :show, User, :id => user.id
+      can :update, User, :id => user.id
       can :create, MaintenanceReport
     end
 
     if user.role? "checkout_person"
       can :show, User, :id => user.id
+      can :update, User, :id => user.id
     end
   end
 end
