@@ -1,7 +1,7 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <% if user_signed_in? && current_user.admin %>
+      <% if user_signed_in? && (current_user.admin || current_user.checkout_person ) %>
           <%= link_to "RIT Bike Share", home_check_out_path, id: "logo" %>
       <% elsif user_signed_in? %>
           <%= link_to "RIT Bike Share", user_home_path, id: "logo" %>

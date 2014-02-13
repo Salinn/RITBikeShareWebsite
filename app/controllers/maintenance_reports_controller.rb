@@ -1,6 +1,6 @@
 class MaintenanceReportsController < ApplicationController
   before_action :set_maintenance_report, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /maintenance_reports
   # GET /maintenance_reports.json
   def index

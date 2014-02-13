@@ -1,5 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /transactions
   # GET /transactions.json

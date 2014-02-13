@@ -1,5 +1,6 @@
 class FeedbackFormsController < ApplicationController
   before_action :set_feedback_form, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /feedback_forms
   # GET /feedback_forms.json

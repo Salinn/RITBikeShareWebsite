@@ -6,22 +6,18 @@ class Ability
 
     if user.role? "admin"
       can :manage, :all
-    end
-
-    if user.role? "student"
+    else
       can :show, User, :id => user.id
       can :update, User, :id => user.id
-    end
+      can :create, FeedbackForm
 
-    if user.role? "repairman"
-      can :show, User, :id => user.id
-      can :update, User, :id => user.id
-      can :create, MaintenanceReport
-    end
+      if user.role? "repairman"
+        can :create, MaintenanceReport
+      end
 
-    if user.role? "checkout_person"
-      can :show, User, :id => user.id
-      can :update, User, :id => user.id
+      if user.role? "checkout_person"
+        can :create, CheckedOut
+      end
     end
   end
 end
