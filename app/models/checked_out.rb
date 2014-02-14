@@ -5,7 +5,9 @@ class CheckedOut < ActiveRecord::Base
   validates :user_id, :presence => { :message => "User account cannot be found, please double check spelling or
                                                   make sure account has been created" }
   validates :bike_id, :presence => { :message => "A bike number needs to be inputed to be checked out" }
+  validates :bike_id, :numericality => { :greater_than_or_equal_to => 0 }
   validate :user_not_checked_out, :on => :create
+  validate :valid_bike, :on => :create
   #validate :check_if_bike_needs_repair, :on => :create
 
   private
@@ -22,7 +24,14 @@ class CheckedOut < ActiveRecord::Base
         return false
       end
     end
+    true
+  end
 
+  def valid_bike
+    unless Bike.find_by_bike_id(bike_id)
+      self.errors.add(:base, "Please enter a valid bike number")
+      return false
+    end
     true
   end
 

@@ -80,8 +80,10 @@ class CheckedOutsController < ApplicationController
 
   def create_bike_values
     @bike = Bike.find_by_bike_id(@checked_out.bike_id)
-    @bike.checked_out=true
-    @bike.save
+    if @bike != nil
+      @bike.checked_out=true
+      @bike.save
+    end
   end
 
   def update_bike_values
