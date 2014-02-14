@@ -29,7 +29,7 @@ class FeedbackFormsController < ApplicationController
 
     respond_to do |format|
       if @feedback_form.save
-        format.html { redirect_to @feedback_form, notice: 'Feedback form was successfully created.' }
+        format.html { redirect_to user_home_path, notice: 'Feedback form was successfully created.' }
         format.json { render action: 'show', status: :created, location: @feedback_form }
       else
         format.html { redirect_to user_home_path, :flash => @feedback_form.errors }
