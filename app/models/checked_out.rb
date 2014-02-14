@@ -8,6 +8,7 @@ class CheckedOut < ActiveRecord::Base
   validates :bike_id, :numericality => { :greater_than_or_equal_to => 0 }
   validate :user_not_checked_out, :on => :create
   validate :valid_bike, :on => :create
+  validate :registered_user, :on => :create
   #validate :check_if_bike_needs_repair, :on => :create
 
   private
@@ -30,6 +31,15 @@ class CheckedOut < ActiveRecord::Base
   def valid_bike
     unless Bike.find_by_bike_id(bike_id)
       self.errors.add(:base, "Please enter a valid bike number")
+      return false
+    end
+    true
+  end
+
+  def registered_user
+    user = User.find(user_id)
+    unless user.registered
+      self.errors.add(:base, "This student must register")
       return false
     end
     true

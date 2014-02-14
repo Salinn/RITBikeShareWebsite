@@ -17,3 +17,5 @@
 
 #ignore .idea
 .idea*
+/idea*
+/.idea*
