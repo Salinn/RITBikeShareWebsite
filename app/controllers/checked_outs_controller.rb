@@ -42,8 +42,7 @@ class CheckedOutsController < ApplicationController
   # PATCH/PUT /checked_outs/1
   # PATCH/PUT /checked_outs/1.json
   def update
-    @checked_out.date_of_checkout=Date.current
-    @checked_out.time_of_checkout=Time.current
+    @checked_out.time_of_checkin=Time.now.in_time_zone('Eastern Time (US & Canada)')
     respond_to do |format|
       if @checked_out.update(checked_out_params)
         update_bike_values
@@ -76,8 +75,7 @@ class CheckedOutsController < ApplicationController
     @checked_out = CheckedOut.new
     @checked_out.bike_id=checked_out_params[:bike_id]
     @checked_out.user=User.find_by_login(checked_out_params[:user_id])
-    @checked_out.date_of_checkout=Date.current
-    @checked_out.time_of_checkout=Time.current
+    @checked_out.time_of_checkout=Time.now.in_time_zone('Eastern Time (US & Canada)')
   end
 
   def create_bike_values
