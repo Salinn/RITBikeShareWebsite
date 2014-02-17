@@ -26,9 +26,9 @@ class FeedbackFormsController < ApplicationController
   # POST /feedback_forms.json
   def create
     @feedback_form = FeedbackForm.new(feedback_form_params)
-
     respond_to do |format|
       if @feedback_form.save
+        UserMailer.feed_back_email(@feedback_form).deliver
         format.html { redirect_to user_home_path, notice: 'Feedback form was successfully created.' }
         format.json { render action: 'show', status: :created, location: @feedback_form }
       else
