@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211220832) do
+ActiveRecord::Schema.define(version: 20140217204427) do
 
   create_table "bikes", force: true do |t|
     t.integer  "bike_id"
@@ -25,12 +25,14 @@ ActiveRecord::Schema.define(version: 20140211220832) do
   create_table "checked_outs", force: true do |t|
     t.integer  "user_id"
     t.integer  "bike_id"
-    t.datetime "checkout_time"
-    t.datetime "checkin_time"
     t.boolean  "fixed"
     t.text     "problem"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date_of_checkout"
+    t.date     "date_of_checkin"
+    t.time     "time_of_checkout"
+    t.time     "time_of_checkin"
   end
 
   create_table "feedback_forms", force: true do |t|

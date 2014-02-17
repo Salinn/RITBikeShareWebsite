@@ -14,7 +14,7 @@ class CheckedOut < ActiveRecord::Base
   private
 
   def user_not_checked_out
-    current_check_outs = CheckedOut.order(:bike_id).find_all_by_checkin_time(nil)
+    current_check_outs = CheckedOut.order(:bike_id).find_all_by_time_of_checkin(nil)
 
     current_check_outs.each do |check_out|
       if check_out.user == self.user
