@@ -29,4 +29,8 @@ class StaticPagesController < ApplicationController
 
   def admin_home
   end
+
+  def reports
+    @bikes = Bike.all
+  end
 end

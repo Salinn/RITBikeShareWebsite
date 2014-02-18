@@ -1,0 +1,29 @@
+<% provide(:title, 'Reports') %>
+<h1>Bike Reports</h1>
+
+<table>
+  <tr>
+    <th>Bike Number</th>
+    <th>Bike Checked Out?</th>
+    <th>Bike Needs Repair?</th>
+    <th>Bike Problems</th>
+    <th>Passed Inspection</th>
+    <th>Additional Repair Needed?</th>
+    <th>Repair Comments</th>
+  </tr>
+
+  <tbody>
+  <% @bikes.each do |bike| %>
+      <tr>
+        <td><%= bike.bike_id %></td>
+        <td><%= bike.checked_out? %></td>
+        <td><%= bike.need_repair? %></td>
+        <td><%= bike.problem_description %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Maintenance report', new_maintenance_report_path %>

@@ -29,7 +29,7 @@ RITBikeShareWebsite::Application.routes.draw do
   get 'quiz', to: "static_pages#quiz"
   get 'user_home', to: "static_pages#home_user"
   get 'home_check_out', to: "static_pages#home_admin"
-  get 'reports', to: "maintenance_reports#new"
+  get 'reports', to: "static_pages#reports"
 
   #get '/users/:id', :to => 'users#show', :as => :user
   resources :users

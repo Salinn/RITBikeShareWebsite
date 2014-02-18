@@ -90,9 +90,9 @@ class CheckedOutsController < ApplicationController
     @bike = Bike.find_by_bike_id(@checked_out.bike_id)
     @bike.checked_out=false
     if @checked_out.fixed
-      @bike.problem_description = @checked_out.problem
       @bike.need_repair = @checked_out.fixed
     end
+    @bike.problem_description = @checked_out.problem
     @bike.save
   end
   # Never trust parameters from the scary internet, only allow the white list through.

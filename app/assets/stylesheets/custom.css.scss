@@ -194,3 +194,20 @@ input {
     }
   }
 }
+
+table
+{
+  width:100%;
+}
+th
+{
+  background-color:#ff6928;
+  height:40px;
+}
+td{
+  padding:10px;
+}
+table,th, td
+{
+  border: 1px solid black;
+}
