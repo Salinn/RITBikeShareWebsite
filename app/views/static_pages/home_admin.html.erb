@@ -30,7 +30,6 @@
 <table>
   <thead>
   <tr>
-    <th>User</th>
     <th>Bike</th>
     <th>Check Bike In Link</th>
   </tr>
@@ -40,7 +39,6 @@
   <% @checked_outs = not_cheched_in %>
   <% @checked_outs.each do |checked_out| %>
       <tr>
-        <td><%= checked_out.user.login %></td>
         <td><%= checked_out.bike_id %></td>
         <td><%= link_to 'Check Bike In', edit_checked_out_path(checked_out) %></td>
       </tr>

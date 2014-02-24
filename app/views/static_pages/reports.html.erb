@@ -1,6 +1,7 @@
 <% provide(:title, 'Reports') %>
 <h1>Bike Reports</h1>
 
+
 <table>
   <tr>
     <th>Bike Number</th>
@@ -10,20 +11,26 @@
     <th>Passed Inspection</th>
     <th>Additional Repair Needed?</th>
     <th>Repair Comments</th>
+    <th>Submit</th>
   </tr>
 
   <tbody>
   <% @bikes.each do |bike| %>
+    <%= form_for bike do |bk|%>
       <tr>
         <td><%= bike.bike_id %></td>
         <td><%= bike.checked_out? %></td>
         <td><%= bike.need_repair? %></td>
         <td><%= bike.problem_description %></td>
+        <% bk.hidden_field :bike_id %>
+        <td><%= bk.check_box :passed_inspection %></td>
+        <td><%= bk.check_box :addtional_repair_need %></td>
+        <td><%= bk.text_area :problem_description %></td>
+        <td><%= bk.submit "Create Maintance Report" %></td>
       </tr>
+    <% end %>
   <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Maintenance report', new_maintenance_report_path %>

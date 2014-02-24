@@ -18,7 +18,7 @@
 
     <p>
       <strong>Bike currently being rented is due back in:  </strong>
-      <%= (checked_out.time_of_checkout)%>
+      <%= (checked_out.time_of_checkout).strftime("%D %I:%M %P") %>
     </p>
 <% else %>
     <p>
@@ -32,13 +32,10 @@
 <table>
   <thead>
   <tr>
-    <th>Date of charge_____</th>
-    <th>Charge amount_____</th>
-    <th>Description of charge_________</th>
+    <th>Date of charge</th>
+    <th>Charge amount</th>
+    <th>Description of charge</th>
     <th>Pending</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
   </thead>
 

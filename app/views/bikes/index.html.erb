@@ -3,12 +3,12 @@
 <table>
   <thead>
     <tr>
-      <th>Bike___</th>
-      <th>Checked Out?___</th>
-      <th>Need repair___</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Bike</th>
+      <th>Checked Out?</th>
+      <th>Need Repair?</th>
+      <th>Problem Description</th>
+      <th>Addtitional Repair Needed?</th>
+      <th>Last Date Inspected</th>
     </tr>
   </thead>
 
@@ -18,9 +18,9 @@
         <td><%= bike.bike_id %></td>
         <td><%= bike.checked_out %></td>
         <td><%= bike.need_repair %></td>
-        <td><%= link_to 'Show', bike %></td>
-        <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
-        <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= bike.problem_description %></td>
+        <td><%= bike.addtional_repair_need %></td>
+        <td><%= bike.last_date_inspected %></td>
       </tr>
     <% end %>
   </tbody>

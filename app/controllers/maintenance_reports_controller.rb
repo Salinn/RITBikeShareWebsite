@@ -73,7 +73,15 @@ class MaintenanceReportsController < ApplicationController
       @maintenance_report.user_id = current_user
       @maintenance_report.report  = maintenance_report_params[:report]
       @maintenance_report.problem_before_maintenance = bike.problem_description
+      update_bike bike
       @maintenance_report.save
+    end
+
+    def update_bike bike
+      bike.passed_inspection = true
+      bike.addtional_repair_need = false
+      bike.last_date_inspected = Time.now
+      bike.save
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
