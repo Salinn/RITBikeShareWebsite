@@ -43,7 +43,7 @@
   <% transactions.each do |transaction| %>
       <tr>
         <td><%= transaction.date_of_charge %></td>
-        <td><%= transaction.charge_amount %></td>
+        <td>$<%= transaction.charge_amount %></td>
         <td><%= transaction.description_of_charge %></td>
         <% if transaction.pending? %>
             <td><%= "Pending" %></td>
