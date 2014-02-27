@@ -26,7 +26,6 @@ class CheckedOutsController < ApplicationController
   # POST /checked_outs.json
   def create
     create_checkout_values
-
     respond_to do |format|
       if @checked_out.save
         create_bike_values
@@ -42,7 +41,7 @@ class CheckedOutsController < ApplicationController
   # PATCH/PUT /checked_outs/1
   # PATCH/PUT /checked_outs/1.json
   def update
-    @checked_out.time_of_checkin=Time.now
+    update_checkout_values
     respond_to do |format|
       if @checked_out.update(checked_out_params)
         update_bike_values
@@ -76,23 +75,33 @@ class CheckedOutsController < ApplicationController
     @checked_out.bike_id=checked_out_params[:bike_id]
     @checked_out.user=User.find_by_login(checked_out_params[:user_id])
     @checked_out.time_of_checkout=Time.now
+
+    @bike = Bike.find_by_bike_id(@checked_out.bike_id)
+    if @bike != nil
+      @checked_out.problem = @bike.problem_description
+      @checked_out.fixed = @bike.need_repair
+    else
+      @checked_out.problem = ""
+      @checked_out.fixed = false
+    end
+  end
+
+  def update_checkout_values
+    @checked_out.time_of_checkin=Time.now
+    @checked_out.fixed = checked_out_params[:fixed]
+    @checked_out.problem = checked_out_params[:problem] == nil
   end
 
   def create_bike_values
-    @bike = Bike.find_by_bike_id(@checked_out.bike_id)
-    if @bike != nil
-      @bike.checked_out=true
-      @bike.save
-    end
+    @bike.checked_out=true
+    @bike.save
   end
 
   def update_bike_values
     @bike = Bike.find_by_bike_id(@checked_out.bike_id)
     @bike.checked_out=false
-    if @checked_out.fixed
-      @bike.need_repair = @checked_out.fixed
-    end
-    @bike.problem_description = checked_out_params[:problem]
+    @bike.need_repair = @checked_out.fixed
+    @bike.problem_description = @checked_out.problem
     @bike.save
   end
   # Never trust parameters from the scary internet, only allow the white list through.

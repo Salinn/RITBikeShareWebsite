@@ -2,8 +2,7 @@ class CheckedOut < ActiveRecord::Base
   has_many :bikes
   belongs_to :user
 
-  validates :user_id, :presence => { :message => "User account cannot be found, please double check spelling or
-                                                  make sure account has been created" }
+
   validates :bike_id, :presence => { :message => "A bike number needs to be inputed to be checked out" }
   validates :bike_id, :numericality => { :greater_than_or_equal_to => 0 }
   validate :user_not_checked_out, :on => :create
@@ -37,14 +36,23 @@ class CheckedOut < ActiveRecord::Base
   end
 
   def registered_user
-    user = User.find(user_id)
-    unless user.registered
-      self.errors.add(:base, "This student must register")
+    begin
+      user = User.find(user_id)
+      unless user.registered
+        self.errors.add(:base, "This student must register")
+        return false
+      end
+      true
+    rescue
+      self.errors.add(:base, "User account cannot be found,
+                              please double check spelling or make sure account has been created")
       return false
     end
-    true
   end
 
+  def bike_not_being_repaired
+
+  end
 =begin
   def check_if_bike_needs_repair
     bike = Bike.find_by_bike_id(:bike_id)
