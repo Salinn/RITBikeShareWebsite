@@ -1,14 +1,14 @@
 <% provide(:title, 'Home') %>
 <h1>Home Page</h1>
 
-<% @checked_out = CheckedOut.new %>
-<%= form_for(@checked_out) do |f| %>
-    <% if @checked_out.errors.any? %>
+<% checked_out = CheckedOut.new %>
+<%= form_for(checked_out) do |f| %>
+    <% if checked_out.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@checked_out.errors.count, "error") %> prohibited this checked_out from being saved:</h2>
+          <h2><%= pluralize(checked_out.errors.count, "error") %> prohibited this checked_out from being saved:</h2>
 
           <ul>
-            <% @checked_out.errors.full_messages.each do |msg| %>
+            <% checked_out.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
             <% end %>
           </ul>
@@ -28,22 +28,34 @@
 <% end %>
 
 <table>
-  <thead>
   <tr>
-    <th>Bike</th>
-    <th>Check Bike In Link</th>
+    <td>
+      <table>
+        <tr>
+          <th>Bike</th>
+          <th>Check Bike In Link</th>
+        </tr>
+        <% @checked_outs.each do |checked_out| %>
+        <tr>
+          <td><%= checked_out.bike_id %></td>
+          <td><%= link_to 'Check Bike In', edit_checked_out_path(checked_out) %></td>
+        </tr>
+        <% end %>
+        </table>
+    </td>
+    <td>
+      <table>
+        <tr>
+          <th>Bikes That Can Be Checked Out</th>
+        </tr>
+        <% @can_checked_outs.each do |checked_out| %>
+          <tr>
+            <td><%= checked_out.bike_id %></td>
+          </tr>
+        <% end %>
+      </table>
+    </td>
   </tr>
-  </thead>
-
-  <tbody>
-  <% @checked_outs = not_cheched_in %>
-  <% @checked_outs.each do |checked_out| %>
-      <tr>
-        <td><%= checked_out.bike_id %></td>
-        <td><%= link_to 'Check Bike In', edit_checked_out_path(checked_out) %></td>
-      </tr>
-  <% end %>
-  </tbody>
 </table>
 
 <%= image_tag "RITTiger.jpg", {style: "margin-left:340px; text-align:center; vertical-align:middle;" } %>
