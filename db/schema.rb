@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140218140332) do
+ActiveRecord::Schema.define(version: 20140227022927) do
 
   create_table "bikes", force: true do |t|
     t.integer  "bike_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140218140332) do
     t.text     "problem_before_maintenance"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "addtional_repair_need"
   end
 
   create_table "rails_admin_histories", force: true do |t|

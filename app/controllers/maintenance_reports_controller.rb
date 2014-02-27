@@ -67,25 +67,29 @@ class MaintenanceReportsController < ApplicationController
     end
 
     def create_maintenance_report
-      @maintenance_report = MaintenanceReport.new
       bike = Bike.find_by_bike_id(maintenance_report_params[:bike_id])
-      @maintenance_report.bike_id = bike
-      @maintenance_report.user_id = current_user
+
+      @maintenance_report = MaintenanceReport.new
+      @maintenance_report.bike_id = Bike.find_by_bike_id(maintenance_report_params[:bike_id])
+      @maintenance_report.user_id = current_user.id
       @maintenance_report.report  = maintenance_report_params[:report]
+      @maintenance_report.addtional_repair_need = maintenance_report_params[:addtional_repair_need] == "0" ? false : true
       @maintenance_report.problem_before_maintenance = bike.problem_description
-      update_bike bike
       @maintenance_report.save
+
+      update_bike bike
     end
 
     def update_bike bike
-      bike.passed_inspection = true
-      bike.addtional_repair_need = false
+      bike.addtional_repair_need = @maintenance_report.addtional_repair_need ? true : false
+      bike.passed_inspection = bike.addtional_repair_need
       bike.last_date_inspected = Time.now
+      bike.problem_description = bike.addtional_repair_need ? bike.problem_description : ""
       bike.save
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def maintenance_report_params
-      params.require(:maintenance_report).permit(:bike_id, :report)
+      params.require(:maintenance_report).permit(:bike_id, :report, :addtional_repair_need)
     end
 end
