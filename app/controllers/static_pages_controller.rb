@@ -38,13 +38,13 @@ class StaticPagesController < ApplicationController
 end
 
 def can_checked_out
-  can_checked_outs = Bike.order(:bike_id).find_all_by_checked_out(false)
-  can_checked_outs.each do |check_out|
-    if check_out.need_repair or check_out.addtional_repair_need or check_out.passed_inspection == false
-      can_checked_outs.delete check_out
-    end
+  bikes = Bike.order(:bike_id).find_all_by_checked_out(false)
+  bikes.each do |bike|
+    bikes.delete bike if bike.need_repair
+    bikes.delete bike if bike.addtional_repair_need
+    bikes.delete bike unless bike.passed_inspection
   end
-
+  bikes
 end
 def not_cheched_in
   CheckedOut.order(:bike_id).find_all_by_time_of_checkin(nil)

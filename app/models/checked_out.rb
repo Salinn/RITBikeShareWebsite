@@ -8,7 +8,7 @@ class CheckedOut < ActiveRecord::Base
   validate :user_not_checked_out, :on => :create
   validate :valid_bike, :on => :create
   validate :registered_user, :on => :create
-  #validate :check_if_bike_needs_repair, :on => :create
+  validate :check_if_bike_needs_repair, :on => :create
 
   private
 
@@ -42,26 +42,29 @@ class CheckedOut < ActiveRecord::Base
         self.errors.add(:base, "This student must register")
         return false
       end
+
       true
+
     rescue
       self.errors.add(:base, "User account cannot be found,
                               please double check spelling or make sure account has been created")
-      return false
+      false
     end
   end
 
-  def bike_not_being_repaired
-
-  end
-=begin
   def check_if_bike_needs_repair
-    bike = Bike.find_by_bike_id(:bike_id)
-    if bike.need_repair
-      self.errors.add(:base, "That bike is being repaired")
-      return false
-    end
+    begin
+      bike = Bike.find_by_bike_id(bike_id)
+      if bike.need_repair or bike.addtional_repair_need or bike.passed_inspection
+        self.errors.add(:base, "That bike is being/needs to be repaired")
+        return false
+      end
 
-    true
+      true
+
+    rescue
+      self.errors.add(:base, "Bike cannot be found, please check your bike number")
+      false
+    end
   end
-=end
 end
