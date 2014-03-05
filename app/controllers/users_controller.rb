@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     def set_up_show
       @user = User.find(params[:id])
 
-      bikes_checked_outs = CheckedOut.order(:bike_id).find_all_by_time_of_checkin(nil)
+      bikes_checked_outs = CheckedOut.order(:bike_id).find_all_by_checkin_time(nil)
       bikes_checked_outs.each do |check_out|
         if check_out.user == @user
           @checked_out=CheckedOut.find_by_bike_id(check_out.bike_id)

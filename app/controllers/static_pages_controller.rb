@@ -47,5 +47,5 @@ def can_checked_out
   bikes
 end
 def not_cheched_in
-  CheckedOut.order(:bike_id).find_all_by_time_of_checkin(nil)
+  CheckedOut.order(:bike_id).find_all_by_checkout_time(nil)
 end

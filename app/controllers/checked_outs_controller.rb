@@ -72,9 +72,9 @@ class CheckedOutsController < ApplicationController
 
   def create_checkout_values
     @checked_out = CheckedOut.new
-    @checked_out.bike_id=checked_out_params[:bike_id]
-    @checked_out.user=User.find_by_login(checked_out_params[:user_id])
-    @checked_out.time_of_checkout=Time.now
+    @checked_out.bike_id = checked_out_params[:bike_id]
+    @checked_out.user = User.find_by_login(checked_out_params[:user_id])
+    @checked_out.checkout_time = Time.now.in_time_zone
 
     @bike = Bike.find_by_bike_id(@checked_out.bike_id)
     if @bike != nil
@@ -87,7 +87,7 @@ class CheckedOutsController < ApplicationController
   end
 
   def update_checkout_values
-    @checked_out.time_of_checkin=Time.now
+    @checked_out.checkout_time=Time.now.in_time_zone
     @checked_out.fixed = checked_out_params[:fixed]
     @checked_out.problem = checked_out_params[:problem] == nil
   end
