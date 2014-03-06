@@ -11,7 +11,9 @@
 <%= form_for(@user) do |f| %>
     <h4><%= f.check_box :registered %>By checking this box I am acknowledging that I am 18 years or older,
                                       and have read and agreed to the terms above"</h4>
-    <%= f.text_area :phone_number %>
+    <br>
+    <h4>Enter Your Phone Number Below</h4>
+    <%= f.text_field :phone_number %>
     <br>
     <%= f.submit %>
 <% end %>

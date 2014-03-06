@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @bikes.each do |bike| %>
+    <% @bikes.order(:bike_id).each do |bike| %>
       <tr>
         <td><%= bike.bike_id %></td>
         <td><%= bike.checked_out %></td>

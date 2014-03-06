@@ -87,7 +87,7 @@ class CheckedOutsController < ApplicationController
   end
 
   def update_checkout_values
-    @checked_out.checkout_time=Time.now.in_time_zone
+    @checked_out.checkin_time=Time.now.in_time_zone
     @checked_out.fixed = checked_out_params[:fixed]
     @checked_out.problem = checked_out_params[:problem] == nil
   end

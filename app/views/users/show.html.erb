@@ -6,49 +6,51 @@
 <% transactions = @accessible[:transaction]%>
 
 <p>
-  <strong>Total number of bikes rented:</strong>
+  <strong>Lifetime Number of Rentals:</strong>
   <%= user.checked_out.size %>
 </p>
 
 <% if checked_out != "No" %>
     <p>
-      <strong>Do I have a bike Checked out?  </strong>
-      <%= "Yes" %>
-    </p>
-
-    <p>
-      <strong>Bike currently being rented is due back at:  </strong>
+      <strong>Bike currently being rented is due back:  </strong>
       <%= (checked_out.checkout_time + 1.days).strftime("%A %I:%M %p") %>
     </p>
 <% else %>
     <p>
-      <strong>Bike currently being rented is?</strong>
-      <%= checked_out %>
+      <strong>You are not currently renting a bike</strong>
     </p>
 <% end %>
-<%= current_user.phone_number %>
-<h3 style="text-align: center;">Charges to account</h3>
-
-<table>
-  <thead>
-  <tr>
-    <th>Date of charge</th>
-    <th>Charge amount</th>
-    <th>Description of charge</th>
-    <th>Pending</th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% transactions.each do |transaction| %>
+<br>
+<% unless transactions.empty? %>
+    <h3 style="text-align: center;">Charges to account</h3>
+    <table>
+      <thead>
       <tr>
-        <td><%= transaction.date_of_charge %></td>
-        <td>$<%= transaction.charge_amount %></td>
-        <td><%= transaction.description_of_charge %></td>
-        <% if transaction.pending? %>
-            <td><%= "Pending" %></td>
-        <% end %>
+        <th>Date of charge</th>
+        <th>Charge amount</th>
+        <th>Description of charge</th>
       </tr>
-  <% end %>
-  </tbody>
+      </thead>
+      <tbody>
+      <% transactions.each do |transaction| %>
+          <tr>
+            <td><%= transaction.date_of_charge %></td>
+            <td>$<%= transaction.charge_amount %></td>
+            <td><%= transaction.description_of_charge %></td>
+          </tr>
+      <% end %>
+      </tbody>
 </table>
+<% end %>
+<h5>* The Rental Service is free, however there are possible charges for misuse of bikes or the service,
+  as outlined in the rental agreement</h5>
+<h6>
+  <ul>
+    <li>Late return is: $5 per 24 hours that it is late</li>
+    <li>Failure to return bike after 4 weeks is: The cost of replacing the bike</li>
+    <li>Lost Key is: $30, to replace the U-Lock </li>
+    <li>Damaged Key is: $5, too replace the key</li>
+    <li>Lost Bike is:  The cost of replacing the bike</li>
+    <li>Bike Damage to the point of needing replacement is: The cost of replacing the bike</li>
+  </ul>
+</h6>

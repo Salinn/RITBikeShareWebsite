@@ -67,17 +67,19 @@ class MaintenanceReportsController < ApplicationController
     end
 
     def create_maintenance_report
-      bike = Bike.find_by_bike_id(maintenance_report_params[:bike_id])
-
-      @maintenance_report = MaintenanceReport.new
-      @maintenance_report.bike_id = Bike.find_by_bike_id(maintenance_report_params[:bike_id])
-      @maintenance_report.user_id = current_user.id
-      @maintenance_report.report  = maintenance_report_params[:report]
-      @maintenance_report.addtional_repair_need = maintenance_report_params[:addtional_repair_need] == "0" ? false : true
-      @maintenance_report.problem_before_maintenance = bike.problem_description
-      @maintenance_report.save
-
-      update_bike bike
+      if Bike.find_by_bike_id(maintenance_report_params[:bike_id]) !=nil
+        bike = Bike.find_by_bike_id(maintenance_report_params[:bike_id])
+        @maintenance_report = MaintenanceReport.new
+        @maintenance_report.bike_id = Bike.find_by_bike_id(maintenance_report_params[:bike_id])
+        @maintenance_report.user_id = current_user.id
+        @maintenance_report.report  = maintenance_report_params[:report]
+        @maintenance_report.addtional_repair_need = maintenance_report_params[:addtional_repair_need] == "0" ? false : true
+        @maintenance_report.problem_before_maintenance = bike.problem_description
+        @maintenance_report.save
+        update_bike bike
+      else
+        @maintenance_report.errors.add("Bike was empty")
+      end
     end
 
     def update_bike bike
