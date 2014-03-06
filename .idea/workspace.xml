@@ -26,17 +26,11 @@
       <file leaf-file-name="schema.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/schema.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="28" selection-start="1456" selection-end="1468" vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="2265">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checked_outs_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/checked_outs_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="25" selection-start="2229" selection-end="2229" vertical-scroll-proportion="0.0" vertical-offset="819" max-vertical-offset="1755">
-              <folding />
+            <state line="28" column="23" selection-start="1201" selection-end="1208" vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="2265">
+              <folding>
+                <marker date="1394059042057" expanded="true" signature="834:1133" placeholder="do ... end" />
+                <marker date="1394059042057" expanded="true" signature="1178:1506" placeholder="do ... end" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,25 +38,34 @@
       <file leaf-file-name="static_pages_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="49" selection-start="741" selection-end="741" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="840">
+            <state line="8" column="5" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="840">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checked_out.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/checked_out.rb">
+      <file leaf-file-name="schedule.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/schedule.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="76" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="1140">
+            <state line="1" column="2" selection-start="17" selection-end="17" vertical-scroll-proportion="0.018726591" vertical-offset="0" max-vertical-offset="801">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
+      <file leaf-file-name="over_time_limit.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/user_mailer/over_time_limit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="9" selection-start="782" selection-end="782" vertical-scroll-proportion="0.45173746" vertical-offset="54" max-vertical-offset="885">
+            <state line="3" column="71" selection-start="305" selection-end="305" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="135">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_mailer.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="66" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
               <folding />
             </state>
           </provider>
@@ -86,7 +89,6 @@
         <option value="$PROJECT_DIR$/app/views/checked_outs/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140204015028_add_problem_description_bikes.rb" />
-        <option value="$PROJECT_DIR$/config/schedule.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140211191827_add_repairman_and_checkout_person_users.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140211203811_create_maintance_reports.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140211204808_create_maintenance_reports.rb" />
@@ -98,8 +100,6 @@
         <option value="$PROJECT_DIR$/app/controllers/transactions_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/static_pages/register.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/feedback_forms_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/user_mailer/over_time_limit.html.erb" />
-        <option value="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
         <option value="$PROJECT_DIR$/app/views/user_mailer/feed_back_email.html.erb" />
         <option value="$PROJECT_DIR$/app/views/static_pages/home_user.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20140217230210_add_repair_in_a_week_to_bikes.rb" />
@@ -124,11 +124,14 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss" />
         <option value="$PROJECT_DIR$/db/migrate/20140305223317_change_time_to_datetime_checkouts.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/checked_out.rb" />
         <option value="$PROJECT_DIR$/app/controllers/checked_outs_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/checked_out.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
+        <option value="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
+        <option value="$PROJECT_DIR$/app/views/user_mailer/over_time_limit.html.erb" />
+        <option value="$PROJECT_DIR$/config/schedule.rb" />
       </list>
     </option>
   </component>
@@ -193,6 +196,82 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RITBikeShareWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RITBikeShareWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RITBikeShareWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RITBikeShareWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user_mailer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RITBikeShareWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RITBikeShareWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static_pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RITBikeShareWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RITBikeShareWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -211,25 +290,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RITBikeShareWebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RITBikeShareWebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="mailers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -473,11 +534,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/feedback_form.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="94" selection-start="134" selection-end="134" vertical-scroll-proportion="0.019280206" vertical-offset="0" max-vertical-offset="778" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/FreshmenWelcomeSpeech.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -503,11 +559,6 @@
         <state line="14" column="9" selection-start="579" selection-end="579" vertical-scroll-proportion="0.2785146" vertical-offset="0" max-vertical-offset="754" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user_mailer/over_time_limit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="3" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0198939" vertical-offset="0" max-vertical-offset="754" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user_mailer/feed_back_email.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="754" />
@@ -521,16 +572,6 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/feedback_forms_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="28" selection-start="662" selection-end="662" vertical-scroll-proportion="0.3856041" vertical-offset="135" max-vertical-offset="1215" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="317" selection-end="326" vertical-scroll-proportion="0.2506427" vertical-offset="0" max-vertical-offset="778" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="18" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0198939" vertical-offset="0" max-vertical-offset="754" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/static_pages/reports.html.erb">
@@ -716,27 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="49" selection-start="741" selection-end="741" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="28" selection-start="1456" selection-end="1468" vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="2265">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/checked_outs_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="25" selection-start="2229" selection-end="2229" vertical-scroll-proportion="0.0" vertical-offset="909" max-vertical-offset="1755">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="24" selection-start="1563" selection-end="1563" vertical-scroll-proportion="0.8614232" vertical-offset="0" max-vertical-offset="1200">
@@ -746,14 +766,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/checked_out.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="76" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="1140">
+        <state line="53" column="0" selection-start="1465" selection-end="1465" vertical-scroll-proportion="0.5501956" vertical-offset="373" max-vertical-offset="1140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/checked_outs_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="26" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.92509365" vertical-offset="684" max-vertical-offset="1755">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="9" selection-start="782" selection-end="782" vertical-scroll-proportion="0.45173746" vertical-offset="54" max-vertical-offset="885">
+        <state line="27" column="9" selection-start="782" selection-end="782" vertical-scroll-proportion="0.5212355" vertical-offset="0" max-vertical-offset="885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="23" selection-start="1201" selection-end="1208" vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="2265">
+          <folding>
+            <marker date="1394059042057" expanded="true" signature="834:1133" placeholder="do ... end" />
+            <marker date="1394059042057" expanded="true" signature="1178:1506" placeholder="do ... end" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="66" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="105" selection-start="207" selection-end="312" vertical-scroll-proportion="0.17374517" vertical-offset="0" max-vertical-offset="777">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user_mailer/over_time_limit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="71" selection-start="305" selection-end="305" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="135">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="5" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/schedule.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="2" selection-start="17" selection-end="17" vertical-scroll-proportion="0.018726591" vertical-offset="0" max-vertical-offset="801">
           <folding />
         </state>
       </provider>

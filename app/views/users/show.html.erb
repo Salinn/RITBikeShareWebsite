@@ -17,7 +17,7 @@
     </p>
 
     <p>
-      <strong>Bike currently being rented is due back in:  </strong>
+      <strong>Bike currently being rented is due back at:  </strong>
       <%= (checked_out.checkout_time + 1.days).strftime("%A %I:%M %p") %>
     </p>
 <% else %>

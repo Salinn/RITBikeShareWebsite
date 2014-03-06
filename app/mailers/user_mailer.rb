@@ -7,7 +7,7 @@ class UserMailer < ActionMailer::Base
 
   def over_time_limit user
     @user = user
-    mail(:to => @user.email, :subject => "Registered")
+    mail(:to => @user.email, :subject => "Please Return Your Bike!")
   end
 
   def feed_back_email feedback

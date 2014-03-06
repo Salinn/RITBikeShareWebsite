@@ -55,7 +55,7 @@ class CheckedOut < ActiveRecord::Base
   def check_if_bike_needs_repair
     begin
       bike = Bike.find_by_bike_id(bike_id)
-      if bike.need_repair or bike.addtional_repair_need or bike.passed_inspection
+      if bike.need_repair or bike.addtional_repair_need or !bike.passed_inspection
         self.errors.add(:base, "That bike is being/needs to be repaired")
         return false
       end
