@@ -15,10 +15,11 @@ gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem "cancan"
-gem 'survey', :git => 'git://github.com/runtimerevolution/survey.git'
+#gem 'survey', :git => 'git://github.com/runtimerevolution/survey.git'
 gem 'whenever', :require => false
 gem 'rails_admin'
-
+gem 'unicorn'
+gem 'capricorn'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

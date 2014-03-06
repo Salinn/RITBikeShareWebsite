@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_surveys
+  #has_surveys
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :ldap_authenticatable, :rememberable, :trackable
@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   has_many :maintenance_reports
   has_many :transactions
   has_many :bikes
+
+  validates :phone_number, :presence => { :message => "A phone number needs to be inputted" }, :on => :update
+      validates :phone_number, :length => {is: 10, :message => "A phone number needs to be 10 digits"}, :on => :update
 
   ROLES = %w[admin student repairman]
   before_save do

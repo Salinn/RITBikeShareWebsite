@@ -14,12 +14,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    update_user_more
     respond_to do |format|
-      if @user.update(user_params) && user_params["registered"] == "1"
-        update_user_more
+      if @user.registered && @user.phone_number.size == 10
         format.html { redirect_to user_home_path, notice: 'You have successfully registered!' }
       else
-        format.html { redirect_to register_path, notice: 'You need to check the box to register your account' }
+        format.html { redirect_to register_path, :flash => @user.errors }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -59,6 +60,8 @@ class UsersController < ApplicationController
 
     def update_user_more
       @user.email="#{@user.login}@rit.edu"
+      @user.phone_number = params["user"]["phone_number"].gsub(/[^0-9]/,"").to_i
+      @user.registered = params["user"]["registered"]
       @user.admin=false
       @user.save
     end
@@ -68,7 +71,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:registered)
+      params.require(:user).permit(:registered, :phone_number)
     end
 end
 
