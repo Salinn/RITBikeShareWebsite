@@ -70,7 +70,7 @@ class MaintenanceReportsController < ApplicationController
       if Bike.find_by_bike_id(maintenance_report_params[:bike_id]) !=nil
         bike = Bike.find_by_bike_id(maintenance_report_params[:bike_id])
         @maintenance_report = MaintenanceReport.new
-        @maintenance_report.bike_id = Bike.find_by_bike_id(maintenance_report_params[:bike_id])
+        @maintenance_report.bike_id = bike.bike_id
         @maintenance_report.user_id = current_user.id
         @maintenance_report.report  = maintenance_report_params[:report]
         @maintenance_report.addtional_repair_need = maintenance_report_params[:addtional_repair_need] == "0" ? false : true
@@ -84,7 +84,8 @@ class MaintenanceReportsController < ApplicationController
 
     def update_bike bike
       bike.addtional_repair_need = @maintenance_report.addtional_repair_need ? true : false
-      bike.passed_inspection = bike.addtional_repair_need
+      bike.need_repair = bike.addtional_repair_need
+      bike.passed_inspection = !bike.addtional_repair_need
       bike.last_date_inspected = Time.now
       bike.problem_description = bike.addtional_repair_need ? bike.problem_description : ""
       bike.save

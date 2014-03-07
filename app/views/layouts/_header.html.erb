@@ -2,11 +2,11 @@
   <div class="navbar-inner">
     <div class="container">
       <% if user_signed_in? && (current_user.admin || current_user.checkout_person ) %>
-          <%= link_to "RIT Bike Share", home_check_out_path, id: "logo" %>
+          <%= link_to image_tag("bike_logo_web.png",:size => "60"), home_check_out_path, id: "logo" %>
       <% elsif user_signed_in? %>
-          <%= link_to "RIT Bike Share", user_home_path, id: "logo" %>
+          <%= link_to image_tag("bike_logo_web.png",:size => "60"), user_home_path, id: "logo" %>
       <% else %>
-          <%= link_to "RIT Bike Share", root_path, id: "logo" %>
+          <%= link_to image_tag("bike_logo_web.png",:size => "60"), root_path, id: "logo" %>
       <% end %>
       <nav>
         <ul class="nav pull-right">

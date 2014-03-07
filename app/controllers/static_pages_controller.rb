@@ -38,7 +38,7 @@ class StaticPagesController < ApplicationController
 end
 
 def can_checked_out
-  bikes = Bike.order(:bike_id).find_all_by_checked_out(false)
+  bikes = Bike.order(:bike_id).all
   bikes.each do |bike|
     bikes.delete bike if bike.need_repair
     bikes.delete bike if bike.addtional_repair_need
