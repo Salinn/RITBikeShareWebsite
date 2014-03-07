@@ -1,16 +1,24 @@
 <% provide(:title, 'Register') %>
 <h1>Register</h1>
-    <%= image_tag "FreshmenWelcomeSpeech.jpg", {style: "margin-left:-110px; text-align:center; vertical-align:middle;" } %>
-    <br/>
-    <br/>
-    If you cannot see the above pdf please <a href="https://drive.google.com/a/g.rit.edu/file/d/0BxFVFuWCRDh5QlZ4Y29kaHVjV2M/edit?usp=sharing">
-       click here </a>
-    <br/>
+
+<head>
+  <title>PDFObject example</title>
+  <script type="text/javascript" src="pdfobject.js"></script>
+  <script type="text/javascript">
+      window.onload = function (){
+          var success = new PDFObject({ url: "https://drive.google.com/file/d/0BxFVFuWCRDh5N2dCeU5OM3puc3M/edit?usp=sharing" }).embed();
+      };
+  </script>
+</head>
+<body>
+<p>It appears you don't have Adobe Reader or PDF support in this web
+  browser. <a href="https://drive.google.com/file/d/0BxFVFuWCRDh5N2dCeU5OM3puc3M/edit?usp=sharing">Click here to download the PDF</a></p>
+</body>
     <br/>
     <br/>
 <%= form_for(@user) do |f| %>
     <h4><%= f.check_box :registered %>By checking this box I am acknowledging that I am 18 years or older,
-                                      and have read and agreed to the terms above"</h4>
+                                      and have read and agreed to the terms above</h4>
     <br>
     <h4>Enter Your Phone Number Below</h4>
     <%= f.text_field :phone_number %>

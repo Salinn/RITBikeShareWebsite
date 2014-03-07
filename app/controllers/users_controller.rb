@@ -16,10 +16,10 @@ class UsersController < ApplicationController
   def update
     update_user_more
     respond_to do |format|
-      if @user.registered && @user.phone_number.size == 10
+      if @user.registered && @user.phone_number.to_s.size == 10
         format.html { redirect_to user_home_path, notice: 'You have successfully registered!' }
       else
-        format.html { redirect_to register_path, :flash => @user.errors }
+        format.html { redirect_to user_home_path, :flash => @user.errors }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
