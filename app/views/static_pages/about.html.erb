@@ -1,14 +1,3 @@
-<% @users = User.all %>
-<% @users.each do |user| %>
-    <%= user.admin %> <br/>
-<% end %>
-
-<% @bikes = Bike.all %>
-<% @bikes.each do |bike| %>
-   <%= bike.bike_id %><br/>
-   <%= bike.checked_out %><br/>
-<% end %>
-
-<% @checked_out = CheckedOut %>
---------------------------------------
-<%= Bike.find(1).bike_id %>
+<% provide(:title, 'About') %>
+<h1>Home Page</h1>
+<h2></h2>

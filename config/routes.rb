@@ -22,7 +22,7 @@ RITBikeShareWebsite::Application.routes.draw do
   root :to => "static_pages#home"
   get 'help', to: "static_pages#help"
   get 'about', to:"static_pages#about"
-  get 'contact', to: "static_pages#sign_in"
+  get 'contact', to: "static_pages#contact"
   get 'sign_in', to: "static_pages#sign_in"
   get 'register', to: "static_pages#register"
   get 'account', to: "static_pages#account"
