@@ -23,19 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_header.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+      <file leaf-file-name="static_pages_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="8" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.71428573" vertical-offset="0" max-vertical-offset="777">
+            <state line="44" column="41" selection-start="617" selection-end="617" vertical-scroll-proportion="0.7752809" vertical-offset="39" max-vertical-offset="855">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
+      <file leaf-file-name="schema.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/schema.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="17" selection-start="793" selection-end="793" vertical-scroll-proportion="-18.0" vertical-offset="573" max-vertical-offset="3585">
+            <state line="20" column="27" selection-start="967" selection-end="978" vertical-scroll-proportion="0.0" vertical-offset="175" max-vertical-offset="2310">
               <folding />
             </state>
           </provider>
@@ -87,7 +87,6 @@
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/static_pages/register.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/bikes_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/maintenance_reports_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140307160543_add_due_date_to_bikes_and_checkouts.rb" />
@@ -102,6 +101,7 @@
         <option value="$PROJECT_DIR$/app/views/static_pages/help.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
       </list>
     </option>
   </component>
@@ -224,29 +224,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RITBikeShareWebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RITBikeShareWebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -522,42 +500,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140217230210_add_repair_in_a_week_to_bikes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="55" selection-start="176" selection-end="176" vertical-scroll-proportion="0.061728396" vertical-offset="0" max-vertical-offset="729" />
+        <state line="3" column="55" selection-start="176" selection-end="176" vertical-scroll-proportion="0.061728396" vertical-offset="0" max-vertical-offset="729">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140218140332_add_date_tracker_to_bikes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="71" selection-end="117" vertical-scroll-proportion="0.038610037" vertical-offset="0" max-vertical-offset="777" />
+        <state line="2" column="4" selection-start="71" selection-end="117" vertical-scroll-proportion="0.038610037" vertical-offset="0" max-vertical-offset="777">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140227022927_add_addtional_repair_need_to_maintenance_reports.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="168" selection-end="168" vertical-scroll-proportion="0.096525095" vertical-offset="0" max-vertical-offset="777" />
+        <state line="5" column="0" selection-start="168" selection-end="168" vertical-scroll-proportion="0.096525095" vertical-offset="0" max-vertical-offset="777">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140211191827_add_repairman_and_checkout_person_users.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="729" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="729">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140211204808_create_maintenance_reports.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140211220832_create_feedback_forms.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140217204427_update_date_time_in_checkouts.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="4" selection-start="184" selection-end="234" vertical-scroll-proportion="0.077220075" vertical-offset="0" max-vertical-offset="777" />
+        <state line="4" column="4" selection-start="184" selection-end="234" vertical-scroll-proportion="0.077220075" vertical-offset="0" max-vertical-offset="777">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140305223317_change_time_to_datetime_checkouts.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="44" selection-start="274" selection-end="274" vertical-scroll-proportion="0.09363296" vertical-offset="0" max-vertical-offset="801" />
+        <state line="5" column="44" selection-start="274" selection-end="274" vertical-scroll-proportion="0.09363296" vertical-offset="0" max-vertical-offset="801">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
@@ -644,24 +638,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="63" selection-start="405" selection-end="405" vertical-scroll-proportion="0.33707866" vertical-offset="0" max-vertical-offset="1245" />
+        <state line="18" column="63" selection-start="405" selection-end="405" vertical-scroll-proportion="0.33707866" vertical-offset="0" max-vertical-offset="1245">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/checked_outs.css.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="51" selection-start="554" selection-end="575" vertical-scroll-proportion="0.7565543" vertical-offset="39" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="35" selection-start="996" selection-end="1015" vertical-scroll-proportion="0.0" vertical-offset="175" max-vertical-offset="2310" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/bikes_controller.rb">
@@ -676,12 +660,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140307160543_add_due_date_to_bikes_and_checkouts.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="5" selection-start="182" selection-end="182" vertical-scroll-proportion="0.074906364" vertical-offset="0" max-vertical-offset="801" />
+        <state line="4" column="5" selection-start="182" selection-end="182" vertical-scroll-proportion="0.074906364" vertical-offset="0" max-vertical-offset="801">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140306130617_add_phone_number_to_users.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="5" selection-start="119" selection-end="119" vertical-scroll-proportion="0.056179777" vertical-offset="0" max-vertical-offset="801" />
+        <state line="3" column="5" selection-start="119" selection-end="119" vertical-scroll-proportion="0.056179777" vertical-offset="0" max-vertical-offset="801">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
@@ -749,16 +737,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="17" selection-start="793" selection-end="793" vertical-scroll-proportion="-18.0" vertical-offset="573" max-vertical-offset="3585">
+        <state line="37" column="8" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.71428573" vertical-offset="0" max-vertical-offset="777">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="8" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.71428573" vertical-offset="0" max-vertical-offset="777">
+        <state line="67" column="17" selection-start="793" selection-end="793" vertical-scroll-proportion="0.55598456" vertical-offset="573" max-vertical-offset="3585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="27" selection-start="967" selection-end="978" vertical-scroll-proportion="0.0" vertical-offset="175" max-vertical-offset="2310">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="41" selection-start="617" selection-end="617" vertical-scroll-proportion="0.7752809" vertical-offset="39" max-vertical-offset="855">
           <folding />
         </state>
       </provider>
