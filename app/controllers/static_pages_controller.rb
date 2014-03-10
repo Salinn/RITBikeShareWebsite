@@ -42,6 +42,7 @@ def can_checked_out
   bikes.each do |bike|
     bikes.delete bike if bike.need_repair
     bikes.delete bike if bike.addtional_repair_need
+    bikes.delete bike if bike.checked_out
     bikes.delete bike unless bike.passed_inspection
   end
   bikes
