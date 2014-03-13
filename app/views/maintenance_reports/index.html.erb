@@ -4,10 +4,10 @@
   <thead>
     <tr>
       <th>Bike #</th>
-      <th>Report on Bike</th>
+      <th>Comments after inspection</th>
+      <th>User Comments before inspection</th>
       <th>Additional Repair Needed</th>
-      <th></th>
-      <th></th>
+      <th>Last Inspected By</th>
     </tr>
   </thead>
 
@@ -16,9 +16,10 @@
       <tr>
         <td><%= maintenance_report.bike_id %></td>
         <td><%= maintenance_report.report %></td>
+        <td><%= maintenance_report.problem_before_maintenance%></td>
         <td><%= maintenance_report.addtional_repair_need %></td>
-        <td><%= link_to 'Edit', edit_maintenance_report_path(maintenance_report) %></td>
-        <td><%= link_to 'Destroy', maintenance_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% user = User.find(maintenance_report.user_id)%>
+        <td><%= user.login %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,3 @@
 
 <br>
 
-<%= link_to 'New Maintenance report', new_maintenance_report_path %>

@@ -33,11 +33,14 @@
       <table>
         <tr>
           <th>Bike</th>
+          <th>User's DCE</th>
           <th>Check Bike In Link</th>
         </tr>
         <% @checked_outs.each do |checked_out| %>
         <tr>
           <td><%= checked_out.bike_id %></td>
+          <% user = User.find( checked_out.user_id)%>
+          <td><%= user.login %></td>
           <td><%= link_to 'Check Bike In', edit_checked_out_path(checked_out) %></td>
         </tr>
         <% end %>

@@ -14,6 +14,7 @@ class Ability
       if user.role? "repairman"
         can :create, MaintenanceReport
         can :read, Bike
+        can :read, MaintenanceReport
       end
 
       if user.role? "checkout_person"
