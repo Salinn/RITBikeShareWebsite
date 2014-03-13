@@ -87,6 +87,7 @@ class MaintenanceReportsController < ApplicationController
       bike.need_repair = bike.addtional_repair_need
       bike.passed_inspection = !bike.addtional_repair_need
       bike.last_date_inspected = Time.now
+      bike.next_date_inspected = bike.last_date_inspected + 1.week
       bike.problem_description = bike.addtional_repair_need ? bike.problem_description : ""
       bike.save
     end

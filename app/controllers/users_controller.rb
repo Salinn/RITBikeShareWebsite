@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def update
     update_user_more
     respond_to do |format|
-      if @user.registered && @user.phone_number.to_s.size == 10
+      if @user.registered && @user.phone_number.size == 10
         format.html { redirect_to user_home_path, notice: 'You have successfully registered!' }
       else
         format.html { redirect_to user_home_path, :flash => @user.errors }
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
 
     def update_user_more
       @user.email="#{@user.login}@rit.edu"
-      @user.phone_number = params["user"]["phone_number"].gsub(/[^0-9]/,"").to_i
+      @user.phone_number = params["user"]["phone_number"].gsub(/[^0-9]/,"")
       @user.registered = params["user"]["registered"]
       @user.admin=false
       @user.save

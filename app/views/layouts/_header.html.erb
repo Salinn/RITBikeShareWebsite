@@ -25,8 +25,9 @@
                   <li><%=  link_to "Register", register_path %></li>
               <% end %>
               <% if current_user.repairman %>
-                  <li><%= link_to "Reports", reports_path %></li>
-                  <li><%= link_to "View Reports", bikes_path %></li>
+                  <li><%= link_to "Bike Fleet Summary", bikes_path %>
+                  <li><%= link_to "Repair Entry", reports_path %></li>
+                  <li><%= link_to "View Repair Reports", maintenance_reports_path %></li>
               <% end %>
               <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
           <% else %>

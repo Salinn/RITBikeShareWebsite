@@ -1,7 +1,7 @@
 <% provide(:title, 'Home') %>
 <h1>Home Page</h1>
 <h3>
-  There are currently <%=number_of_bikes_left %> bikes that are available to be checked out currently
+  There are <%=number_of_bikes_left %> bikes that are currently available to be checked out
 </h3>
 
 <% @feedback_form = FeedbackForm.new %>
@@ -18,8 +18,10 @@
         </div>
     <% end %>
 
+    </br>
+    </br>
+    <h4>To submit feedback about your experience please let us know below!</h4>
     <div class="field">
-      <%= f.label :feedback %><br>
       <%= f.text_area :feedback %>
     </div>
     <div class="actions">

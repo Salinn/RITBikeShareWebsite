@@ -218,7 +218,9 @@ td{
 }
 table,th, td
 {
+  vertical-align:top;
   border: 1px solid black;
+
 }
 
 input[type="text"]  {

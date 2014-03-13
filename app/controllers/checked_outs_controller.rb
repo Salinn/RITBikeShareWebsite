@@ -75,6 +75,7 @@ class CheckedOutsController < ApplicationController
     @checked_out.bike_id = checked_out_params[:bike_id]
     @checked_out.user = User.find_by_login(checked_out_params[:user_id])
     @checked_out.checkout_time = Time.now.in_time_zone
+    @checked_out.due_back = @checked_out.checkout_time + 1.days
 
     @bike = Bike.find_by_bike_id(@checked_out.bike_id)
     if @bike != nil
@@ -90,10 +91,12 @@ class CheckedOutsController < ApplicationController
     @checked_out.checkin_time=Time.now.in_time_zone
     @checked_out.fixed = checked_out_params[:fixed]
     @checked_out.problem = checked_out_params[:problem] == nil
+    @checked_out.due_back = nil
   end
 
   def create_bike_values
     @bike.checked_out=true
+    @bike.next_date_inspected = @checked_out.checkout_time + 1.days
     @bike.save
   end
 
@@ -102,6 +105,7 @@ class CheckedOutsController < ApplicationController
     @bike.checked_out=false
     @bike.need_repair = @checked_out.fixed
     @bike.problem_description = @checked_out.problem
+    @bike.next_date_inspected = nil
     @bike.save
   end
   # Never trust parameters from the scary internet, only allow the white list through.

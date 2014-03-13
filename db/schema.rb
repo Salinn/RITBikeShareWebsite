@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307160543) do
+ActiveRecord::Schema.define(version: 20140313233755) do
 
   create_table "bikes", force: true do |t|
     t.integer  "bike_id"
@@ -140,7 +140,7 @@ ActiveRecord::Schema.define(version: 20140307160543) do
     t.integer  "roles_mask"
     t.boolean  "repairman"
     t.boolean  "checkout_person"
-    t.integer  "phone_number"
+    t.string   "phone_number"
   end
 
   add_index "users", ["login"], name: "index_users_on_login", unique: true
