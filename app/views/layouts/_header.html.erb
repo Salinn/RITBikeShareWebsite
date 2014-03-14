@@ -22,7 +22,7 @@
               <% if current_user.registered %>
                   <li><%=  link_to "Account", current_user %></li>
               <% else %>
-                  <li><%=  link_to "Register", register_path %></li>
+                  <li><%=  link_to "Register", register_path, {:style=>'color:#ff0000;'} %></li>
               <% end %>
               <% if current_user.repairman %>
                   <li><%= link_to "Bike Fleet Summary", bikes_path %>

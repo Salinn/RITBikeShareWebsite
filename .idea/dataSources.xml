@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1769694282">
+  <component name="DataSourceManagerImpl" format="xml" hash="3612213757">
     <data-source source="LOCAL" name="Rails RITBikeShareWebsite: development" uuid="d70b0a90-67df-4623-8f76-41abaab32e3b">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:postgresql://sg-alpha-db.rit.edu/sg-bikeshare-dev</jdbc-url>
+      <user-name>sg-bikeshare-dev</user-name>
+      <user-password>dfdedfe7dfe6dfc8dfc9dfe6dffedf92df99dff2dfdadf98</user-password>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/xerial-sqlite-license.txt</url>
@@ -17,7 +19,7 @@
     <data-source source="LOCAL" name="Rails RITBikeShareWebsite: test" uuid="9e467544-cb4c-4465-b038-caa86b8dd6e3">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:db/test.sqlite3</jdbc-url>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/xerial-sqlite-license.txt</url>
@@ -26,6 +28,14 @@
           <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/sqlite-jdbc-3.7.6.3-20110609.081603-3.jar</url>
         </library>
       </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Rails RITBikeShareWebsite: production" uuid="d424806b-68ef-42dd-b6f3-7e9b55def996">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://sg-alpha-db.rit.edu/sg-bikeshare</jdbc-url>
+      <user-name>sg-bikeshare</user-name>
+      <user-password>dfc1dfd2dff3dffbdf9edf93df98dfe2dfd8dfc7df92dfc2</user-password>
+      <libraries />
     </data-source>
   </component>
 </project>

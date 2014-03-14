@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 
   validates :phone_number, :presence => { :message => "A phone number needs to be inputted" }, :on => :update
   validates :phone_number, :length => {is: 10, :message => "A phone number needs to be 10 digits"}, :on => :update
+  validate  :user_registered, :on => :update
+
 
   ROLES = %w[admin student repairman]
   before_save do
@@ -41,4 +43,13 @@ class User < ActiveRecord::Base
     end
     false
   end
+
+  def user_registered
+    unless :registered
+      self.errors.add(:base, "You must check of the checkbox agreeing to the terms mentioned above")
+      return false
+    end
+    true
+  end
 end
+

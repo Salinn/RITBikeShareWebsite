@@ -19,7 +19,8 @@ class UsersController < ApplicationController
       if @user.registered && @user.phone_number.size == 10
         format.html { redirect_to user_home_path, notice: 'You have successfully registered!' }
       else
-        format.html { redirect_to user_home_path, :flash => @user.errors }
+        @user.errors.add(:base, "You must check of the checkbox agreeing to the terms mentioned above")
+        format.html { redirect_to register_path, :flash => @user.errors }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -62,7 +63,6 @@ class UsersController < ApplicationController
       @user.email="#{@user.login}@rit.edu"
       @user.phone_number = params["user"]["phone_number"].gsub(/[^0-9]/,"")
       @user.registered = params["user"]["registered"]
-      @user.admin=false
       @user.save
     end
 
