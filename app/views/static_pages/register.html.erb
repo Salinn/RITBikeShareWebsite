@@ -8,13 +8,19 @@
 <p>It appears you don't have Adobe Reader or PDF support in this web
   browser. <a href="https://docs.google.com/uc?export=download&id=0BxFVFuWCRDh5N2dCeU5OM3puc3M">Click here to download the PDF</a></p>
 </body>
-    <br/>
+
+<br/>
+<h4>For tips and information about riding bikes please read the links below:</h4>
+<ul>
+    <li><h6><a href="http://www.safeny.ny.gov/media/share-road.htm">New York State’s “Sharing the Road Safely”</a></h6></li>
+    <li><h6><a href="http://www.rochestercyclingalliance.org/wp-content/uploads/2012/10/Bike-Safety-English-final-July-17-2012.pdf">Rochester Cycling Alliance’s “Keep Riding, Bike Safely”</a></h6></li>
+</ul>
     <br/>
 <%= form_for(@user) do |f| %>
-    <h4><%= f.check_box :registered %>By checking this box I am acknowledging that I am 18 years or older,
+    <h4><%= f.check_box :registered %>By checking this box I am acknowledging that I am 18 years or older, have read the bike links above,
                                       and have read and agreed to the terms above</h4>
     <br>
-    <h4>Enter Your Phone Number Below</h4>
+    <h4>Please Enter Your Phone Number Below</h4>
     <%= f.text_field :phone_number %>
     <br>
     <%= f.submit %>
