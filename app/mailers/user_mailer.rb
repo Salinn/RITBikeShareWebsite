@@ -10,8 +10,9 @@ class UserMailer < ActionMailer::Base
     mail(:to => @user.email, :subject => "Please Return Your Bike!")
   end
 
-  def feed_back_email feedback
+  def feed_back_email feedback, current_user
     @feedback = feedback
+    @user = current_user
     mail(:to => "sgpres@rit.edu", :subject => "New Feedback")
   end
 end
