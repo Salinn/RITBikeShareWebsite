@@ -23,79 +23,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="register.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/static_pages/register.html.erb">
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="45" selection-start="1183" selection-end="1183" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="480">
+            <state line="3" column="47" selection-start="157" selection-end="157" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="285">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home_user.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="home_user.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/static_pages/home_user.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="34" selection-start="777" selection-end="777" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="525">
-              <folding>
-                <marker date="1394581148134" expanded="true" signature="52:150" placeholder="..." />
-                <marker date="1394581148134" expanded="true" signature="307:602" placeholder="..." />
-                <marker date="1394581148134" expanded="true" signature="445:587" placeholder="..." />
-                <marker date="1394581148134" expanded="true" signature="741:787" placeholder="..." />
-                <marker date="1394581148134" expanded="true" signature="813:864" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feedback_forms_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/feedback_forms_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="63" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1215">
+            <state line="5" column="99" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0994695" vertical-offset="0" max-vertical-offset="754">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_mailer.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
+      <file leaf-file-name="help.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/static_pages/help.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="24" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+            <state line="32" column="43" selection-start="1519" selection-end="1519" vertical-scroll-proportion="-8.275862" vertical-offset="0" max-vertical-offset="690">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feed_back_email.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/user_mailer/feed_back_email.html.erb">
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="4" selection-start="55" selection-end="55" vertical-scroll-proportion="0.04249292" vertical-offset="0" max-vertical-offset="706">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checked_outs_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/checked_outs_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="31" selection-start="2539" selection-end="2539" vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="1815">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="maintenance_reports_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/maintenance_reports_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="50" selection-start="2364" selection-end="2376" vertical-scroll-proportion="-14.205882" vertical-offset="612" max-vertical-offset="1575">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home_admin.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/static_pages/home_admin.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="25" selection-start="885" selection-end="885" vertical-scroll-proportion="-9.875" vertical-offset="228" max-vertical-offset="1140">
+            <state line="52" column="27" selection-start="1682" selection-end="1682" vertical-scroll-proportion="-26.875" vertical-offset="135" max-vertical-offset="930">
               <folding />
             </state>
           </provider>
@@ -111,7 +69,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/transaction.rb" />
         <option value="$PROJECT_DIR$/app/models/maintenance_report.rb" />
         <option value="$PROJECT_DIR$/app/models/bike.rb" />
         <option value="$PROJECT_DIR$/app/models/feedback_form.rb" />
@@ -144,9 +101,6 @@
         <option value="$PROJECT_DIR$/app/views/static_pages/contact.html.erb" />
         <option value="$PROJECT_DIR$/app/views/static_pages/about.html.erb" />
         <option value="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/static_pages/home_user.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/static_pages/help.html.erb" />
         <option value="$PROJECT_DIR$/app/views/maintenance_reports/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/models/ability.rb" />
         <option value="$PROJECT_DIR$/app/views/maintenance_reports/index.html.erb" />
@@ -162,6 +116,10 @@
         <option value="$PROJECT_DIR$/app/controllers/feedback_forms_controller.rb" />
         <option value="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
         <option value="$PROJECT_DIR$/app/views/user_mailer/feed_back_email.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/static_pages/help.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/static_pages/home_user.html.erb" />
       </list>
     </option>
   </component>
@@ -233,6 +191,28 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RITBikeShareWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RITBikeShareWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -252,39 +232,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user_mailer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RITBikeShareWebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RITBikeShareWebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RITBikeShareWebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RITBikeShareWebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mailers" />
+              <option name="myItemId" value="devise" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -302,7 +250,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="devise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sessions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RITBikeShareWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RITBikeShareWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -567,11 +537,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/user_mailer/over_time_limit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="71" selection-start="305" selection-end="305" vertical-scroll-proportion="0.057915058" vertical-offset="0" max-vertical-offset="777" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/checked_outs/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="79" selection-start="757" selection-end="757" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="525" />
@@ -658,16 +623,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/static_pages/about.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="43" selection-start="519" selection-end="519" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="54" selection-start="1392" selection-end="1408" vertical-scroll-proportion="-23.125" vertical-offset="135" max-vertical-offset="930" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/static_pages/help.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="54" selection-start="734" selection-end="734" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="690" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
@@ -809,57 +764,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home_user.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/user_mailer/feed_back_email.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="34" selection-start="777" selection-end="777" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="525">
-          <folding>
-            <marker date="1394581148134" expanded="true" signature="52:150" placeholder="..." />
-            <marker date="1394581148134" expanded="true" signature="307:602" placeholder="..." />
-            <marker date="1394581148134" expanded="true" signature="445:587" placeholder="..." />
-            <marker date="1394581148134" expanded="true" signature="741:787" placeholder="..." />
-            <marker date="1394581148134" expanded="true" signature="813:864" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/maintenance_reports_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="50" selection-start="2364" selection-end="2376" vertical-scroll-proportion="-14.205882" vertical-offset="612" max-vertical-offset="1575">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/checked_outs_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="31" selection-start="2539" selection-end="2539" vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="1815">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home_admin.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="25" selection-start="885" selection-end="885" vertical-scroll-proportion="-9.875" vertical-offset="228" max-vertical-offset="1140">
+        <state line="2" column="4" selection-start="55" selection-end="55" vertical-scroll-proportion="0.05226481" vertical-offset="0" max-vertical-offset="574">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/feedback_forms_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="63" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1215">
+        <state line="30" column="63" selection-start="726" selection-end="726" vertical-scroll-proportion="0.72347265" vertical-offset="0" max-vertical-offset="1215">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="24" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+        <state line="14" column="24" selection-start="390" selection-end="390" vertical-scroll-proportion="0.3376206" vertical-offset="0" max-vertical-offset="622">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user_mailer/feed_back_email.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/checked_outs_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="55" selection-end="55" vertical-scroll-proportion="0.04249292" vertical-offset="0" max-vertical-offset="706">
+        <state line="84" column="31" selection-start="2539" selection-end="2539" vertical-scroll-proportion="1.6255925" vertical-offset="231" max-vertical-offset="1815">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/maintenance_reports_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="50" selection-start="2364" selection-end="2376" vertical-scroll-proportion="0.7892157" vertical-offset="612" max-vertical-offset="1575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home_admin.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="25" selection-start="885" selection-end="885" vertical-scroll-proportion="0.38102895" vertical-offset="228" max-vertical-offset="1140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="47" selection-start="157" selection-end="157" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="27" selection-start="1682" selection-end="1682" vertical-scroll-proportion="-26.875" vertical-offset="135" max-vertical-offset="930">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/help.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="43" selection-start="1519" selection-end="1519" vertical-scroll-proportion="-8.275862" vertical-offset="0" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home_user.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="99" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0994695" vertical-offset="0" max-vertical-offset="754">
           <folding />
         </state>
       </provider>

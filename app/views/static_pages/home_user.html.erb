@@ -1,5 +1,15 @@
 <% provide(:title, 'Home') %>
 <h1>Home Page</h1>
+<% if current_user.registered %>
+    <h2>To check out a bike go to the Kate Gleason Residential Office, after April 7th</h2>
+    <h2>Currently this website is being utilized for users to sign up, see how many bikes are available to be checked
+      out currently, and to keep track of when you have to return the bike that you have rented out</h2>
+    <br>
+<% else %>
+    <h3> To be allowed to check out a bike out, please click the register button in the top right corner</h3>
+    <br>
+<% end %>
+
 <h3>
   There are <%=number_of_bikes_left %> bikes that are currently available to be checked out
 </h3>
