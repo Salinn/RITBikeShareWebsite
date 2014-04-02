@@ -3,7 +3,7 @@ class CheckedOut < ActiveRecord::Base
   belongs_to :user
 
 
-  validates :bike_id, :presence => { :message => "A bike number needs to be inputed to be checked out" }
+  validates :bike_id, :presence => { :message => "A bike number needs to be inputted to be checked out" }
   validates :bike_id, :numericality => { :greater_than_or_equal_to => 0 }
   validate :user_not_checked_out, :on => :create
   validate :valid_bike, :on => :create
