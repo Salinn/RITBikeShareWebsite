@@ -1,10 +1,140 @@
-<% provide(:title, 'Home') %>
-<h1>Home Page</h1>
-</p>
-<ul><h4>
-  <li>We are excited to announce that this will be released April 7th.</li> <br />
-  <li>This is a service that is FREE to Students, Staff, and Faculty! <h6>As long as you do not abuse it!</h6></li>
-  <li>To register for this program, click the Sign In button in the top right.
-      After logging in the first time you need to Register to be eligible to checkout a bike.</li><br/>
-  <li>More updates to come!</li> <br/><br/><br/>
-</h4></ul>
+<% provide(:title, 'RIT Bikeshare') %>
+<% provide(:base, '') %>
+
+    <!-- home.html.erb -->
+    <section class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading" style="text-shadow: 1px 1px 3px #000;">Bikeshare</h1>
+                        <p class="intro-text" style="text-shadow: 1px 1px 3px #000;">Something here about how amazing it is to share bikes here at RIT. </p>
+                        <div class="page-scroll">
+                            <a href="#about" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container content-section">
+        <section class="about-section">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2"  style="/*border:1px solid #fff;*/ padding: 10px; background: rgba(0,0,0,0.75); ">
+                <h2>RIT Bikeshare</h2>
+                <p>The RIT Bikeshare is a free program to all students enroled and all facuality at RIT.</p>
+                <p>You can rent a bike for 24 hours to do what ever you want. Ride around campus, to the Marketplace Mall, or show off your skills to friends.</p>
+                <p>More stuff here about how cool it is to rent bikes</p>
+                <p>More stuff here about how cool it is to rent bikes</p>
+                <p>More stuff here about how cool it is to rent bikes</p>
+                <div class="page-scroll">
+                    <a href="#faq" class="btn btn-default btn-lg">FAQ</a>
+                </div>           
+            </div>
+        </div>
+        </section>
+    </section>
+
+    <section id="faq" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2" style="text-shadow: 1px 1px 3px #000;">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <h4>Is it free?</h4>
+                    <p>
+                        Yes! The RIT Bikeshare is free to use. There can be fees levied for late returns, damage, or loss of the bike, but if you return the bike on time and in good condition, there is no charge.
+                    </p>
+                   
+                    <h4>Do I need to wear a helmet?</h4>
+                    <p>
+                        While we strongly recommend that you wear a helmet, you do not need to use one. We currently do not rent helmets, but they can be purchased at the on campus bike shop.
+                    </p>
+                    <h4>Where do I check out a bike?</h4>
+                    <p>
+                        Right now, the only place where you can check out a bike is in the Residential Office in the Kate-Gleason Dorm, but we hope to soon open another checkout location on the academic side.
+                    </p>
+                    <h4>Is there anything that I need to do before borrowing a bike?</h4>
+                    <p>
+                        Yes. You can start by logging in with your RIT computer account below. You will be directed to read and agree to a form, which you have to agree to before you can checkout a bike. Once you do that, you can go to a checkout location and checkout a bike. Bike checkout can not be done via this website.
+                    </p>
+                    <a href="#login" class="btn btn-default btn-lg">Login</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="login" class="container content-section text-center" style="padding-top: 100px; padding-bottom: 150px;">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Login</h2>
+                    <section class="row">
+             <!---           <section class="col-lg-12" style="padding: 6px; height: 35px; margin-bottom: 40px;">
+                            <h5 style="width: 270px; border-bottom: 1px solid red; padding-bottom: 6px; margin: 0 auto;">Invalid Login Credentials.</h5>
+                        </section>
+                    </section>
+             --->
+                    <section class="row login-holder" style="text-align: left;">
+                        <section class="col-lg-6">
+                            <p>Enter your RIT username and password to sign in.</p>
+                            <p>Once logged in, you can view your rental agreement, view checked out bikes, view due times, and view any fees (hopefully not).</p>
+                            <p>All account and login issues should be directed to the ITS Service Desk (servicedesk@rit.edu).</p>
+                        </section>
+                        <section class="col-lg-6">
+                            <%= form_for(:user, :url => session_path(:user)) do |f| %>
+                                <p>
+                                    <%= f.label "RIT Username:" %>
+                                    <%= f.text_field :login, :autofocus => false, :style => "width: 100%;padding: 4px 4px 4px 4px; font-size: 12px;" %>
+                                </p>
+                                <p>
+                                    <%= f.label :password %>
+                                    <%= f.password_field :password, :autofocus => false, :style => "width: 100%;padding: 4px 4px 4px 4px; font-size: 12px;" %>
+                                </p>
+                                <p>
+                                    <small>
+                                        By logging in, you are agreeing to <a href="http://www.rit.edu/terms_of_use.html">RIT Terms of Service</a>, <a href="http://www.rit.edu/its/resnet/rit-network-acceptable-use-guidelines">Resnet Usage Guidelines</a>, and the SG Service Terms.
+                                    </small>
+                                    <br /><br />
+                                    <%= f.submit "Sign in", :class => "btn btn-default btn-lg" %>
+                                </p>
+                            <% end %>
+                        </section>
+                    </section>
+                </div>
+            </div>
+        </section>
+    
+    
+    
+        <section id="mapinabox" style="position:relative;">
+            <div id="map"></div>
+            <div style="margin:0; padding:0;position:absolute;top:75px; width:100%; height: 150px; background: #444; opacity:0.75;filter:alpha(opacity=75); ">
+                <div class=''>
+        
+                    <div class='col-lg-3'>
+                        <a href="http://rit.edu/housing">RIT Housing</a> <br />
+                        <a href="http://rit.edu/fa/facilities">RIT FMS</a> <br />
+                        <a href="http://www.rit.edu/sg/cycling/">RIT Cycling Club</a>
+                    </div>
+                    <div class='col-lg-3' style='padding-top: 15px;'>
+                        <a href="https://sg.rit.edu"><div class="footer-item sg-logo"></div></a>
+                    </div>
+                    <div class='col-lg-3' style='padding-top: 15px;'>
+                        <a href="http://www.rit.edu/">Rochester Institute of Technology</a>
+                        <br /><a href="http://www.rit.edu/copyright.html">Copyright Infringement</a><br />
+                        <a href="http://www.rit.edu/privacystatement.html">Privacy Statement</a>
+                        <br /><a href="http://www.rit.edu/disclaimer.html">Disclaimer</a><br />
+                    </div>
+                    <div class='col-lg-3' style='padding-top: 15px;'>
+                        Campus Center
+                        <br />Building 03-1710<br />
+                        P: (585) 475-4043
+                        <br />&copy; RIT Student Government<br />
+                    </div>
+                </div>
+            </div>
+        </section>
+

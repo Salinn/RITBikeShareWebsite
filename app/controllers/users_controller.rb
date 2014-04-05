@@ -37,7 +37,7 @@ class UsersController < ApplicationController
         elsif user_signed_in?
           redirect_to user_home_path, notice: "You do not have access to this individuals accounts."
         else
-          redirect_to root_path, notice: "You do not have access to thi individuals accountss."
+          redirect_to root_path, notice: "You do not have access to this individuals accountss."
         end
       end
     end
