@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     if current_user.admin
       home_check_out_path
     else
-      user_home_path
+      current_user #user_home_path
     end
   end
 
