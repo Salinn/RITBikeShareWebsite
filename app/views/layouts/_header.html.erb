@@ -1,16 +1,70 @@
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<header class="navbar navbar-fixed-top navbar-inverse nav-collapse collapse">
-  <div class="navbar-inner ">
-    <div class="container nav-collapse collapse">
-      <% if user_signed_in? && (current_user.admin || current_user.checkout_person ) %>
-          <%= link_to image_tag("bike_logo_web.png",:size => "60"), home_check_out_path, id: "logo" %>
-      <% elsif user_signed_in? %>
-          <%= link_to image_tag("bike_logo_web.png",:size => "60"), user_home_path, id: "logo" %>
-      <% else %>
-          <%= link_to image_tag("bike_logo_web.png",:size => "60"), root_path, id: "logo" %>
-      <% end %>
-      <nav>
-        <ul class="nav pull-right">
+            <section class="rit">
+                <div class="inner">
+                    <a class="logo" href="http://rit.edu" title="Rochester Institute of Technology"><img src="http://cias.rit.edu/media/images/rit-header-logo.gif" alt="Rochester Institute of Technology Logo" title="Rochester Institute of Technology" /></a>
+                    <div class="meta">
+                        <ul class="links">
+                            <li><a href="http://www.rit.edu/directories/">Directories</a></li>
+                        </ul>
+                        <form id="rit-search" method="get" action="http://www.rit.edu/search/">
+                            <div class="infield">
+                                <label for="rit-search-query">Search RIT</label>
+                                <input id="rit-search-query" name="q" type="text" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+                <nav class="navbar navbar-custom navbar-fixed-top" role="navigation" style="text-shadow: 0px 1px 1px #000;">
+                    <div class="container">
+                        <div class="navbar-header page-scroll">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <a class="navbar-brand" href="#page-top">
+                                <img src="./bike logo web.png" alt="RIT Bikeshare" style="margin-top: -3px;" /> <span class="light">RIT</span> Bikeshare
+                            </a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                            <ul class="nav navbar-nav">
+                                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                                <!-- TODO Make these links redirect to the index if we are not on the index. -->
+                                <li class="hidden">
+                                   <a href="#page-top"></a>
+                                </li>
+                                <li class="page-scroll">
+                                    <a href="<%= :baseUrl %>#about">About</a>
+                                </li>
+                                <li class="page-scroll">
+                                    <a href="<%= :baseUrl %>#download">FAQ</a>
+                                </li>
+                            <% if user_signed_in? && (current_user.admin || current_user.checkout_person ) %>
+                                <li class="page-scroll"> <!-- For the people who run it -->
+                                    <%= link_to "Administration", home_check_out_path %>
+                                </li>
+                            <% elsif user_signed_in? %>
+                                <li class="page-scroll"> <!-- Non special people, who need to view their account -->
+                                    <%= link_to "My Account", current_user %>
+                                </li>
+                            <% else %>
+                                <li class="page-scroll"> <!-- Not Logged in -->
+                                    <a href="<%= :baseUrl %>#contact">Login</a>
+                                </li>
+                            <% end %>
+                            <% if user_signed_in? %>
+                                <li class="page-scroll"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+                            <% end %>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container -->
+                </nav>
+<!--
+
+
           <% if user_signed_in? && (current_user.admin || current_user.checkout_person )%>
               <li><%= link_to "Home",    home_check_out_path %></li>
           <% elsif user_signed_in? %>
@@ -18,24 +72,6 @@
           <% else %>
               <li><%= link_to "Home",    root_path %></li>
           <% end %>
-          <li><%= link_to "FAQ",    help_path %></li>
-          <% if user_signed_in? %>
-              <% if current_user.registered %>
-                  <li><%=  link_to "Account", current_user %></li>
-              <% else %>
-                  <li><%=  link_to "Register", register_path, {:style=>'color:#ff0000;'} %></li>
-              <% end %>
-              <% if current_user.repairman %>
-                  <li><%= link_to "Bike Fleet Summary", bikes_path %>
-                  <li><%= link_to "Repair Entry", reports_path %></li>
-                  <li><%= link_to "View Repair Reports", maintenance_reports_path %></li>
-              <% end %>
-              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-          <% else %>
-              <li><%= link_to "Sign in", new_user_session_path %></li>
-          <% end %>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
+<li><%= link_to "FAQ",    help_path %></li>
+-->
+

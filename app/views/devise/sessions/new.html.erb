@@ -1,13 +1,25 @@
-<h2>Sign in</h2>
+<section id="backend" class="content-section" >
+        <div class="backend-section">
+            <div class="container" style="padding-top: 150px;">
+                <div class="col-lg-9 col-lg-offset-2 inside">
+                
+                <% flash.each do |key, value| %>
+                  <div class="alert alert-<%= key %>"><%= value %></div>
+                <% end %>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label "Login with your RIT account" %><br />
-  <%= f.text_field :login, :autofocus => true %></div>
+				<h5>Sign in</h5>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+				<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+					<div><%= f.label "Login with your RIT account" %><br />
+					<%= f.text_field :login, :autofocus => true %></div>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+					<div><%= f.label :password %><br />
+					<%= f.password_field :password %></div>
 
-<%= render "devise/shared/links" %>
+					<div><%= f.submit "Sign in" %></div>
+				<% end %>
+
+			</div>
+		</div>
+	</div>
+</section>
