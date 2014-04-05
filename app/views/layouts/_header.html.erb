@@ -1,6 +1,6 @@
             <section class="rit">
                 <div class="inner">
-                    <a class="logo" href="http://rit.edu" title="Rochester Institute of Technology"><img src="http://cias.rit.edu/media/images/rit-header-logo.gif" alt="Rochester Institute of Technology Logo" title="Rochester Institute of Technology" /></a>
+                    <a class="logo" href="http://rit.edu" title="Rochester Institute of Technology"><img src="/assets/rit-header-logo.gif" alt="Rochester Institute of Technology Logo" title="Rochester Institute of Technology" /></a>
                     <div class="meta">
                         <ul class="links">
                             <li><a href="http://www.rit.edu/directories/">Directories</a></li>
@@ -22,7 +22,7 @@
                                 <i class="fa fa-bars"></i>
                             </button>
                             <a class="navbar-brand" href="#page-top">
-                                <img src="./bike logo web.png" alt="RIT Bikeshare" style="margin-top: -3px;" /> <span class="light">RIT</span> Bikeshare
+                                <img src="/assets/logo.png" alt="RIT Bikeshare" style="margin-top: -3px;" /> <span class="light">RIT</span> Bikeshare
                             </a>
                         </div>
 
@@ -35,10 +35,10 @@
                                    <a href="#page-top"></a>
                                 </li>
                                 <li class="page-scroll">
-                                    <a href="<%= :baseUrl %>#about">About</a>
+                                    <a href="/#about">About</a>
                                 </li>
                                 <li class="page-scroll">
-                                    <a href="<%= :baseUrl %>#download">FAQ</a>
+                                    <a href="/#faq">FAQ</a>
                                 </li>
                             <% if user_signed_in? && (current_user.admin || current_user.checkout_person ) %>
                                 <li class="page-scroll"> <!-- For the people who run it -->
@@ -50,7 +50,7 @@
                                 </li>
                             <% else %>
                                 <li class="page-scroll"> <!-- Not Logged in -->
-                                    <a href="<%= :baseUrl %>#contact">Login</a>
+                                    <a href="/#login">Login</a>
                                 </li>
                             <% end %>
                             <% if user_signed_in? %>
