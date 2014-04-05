@@ -1,5 +1,14 @@
 <% provide(:title, 'Home') %>
-<h1>Home Page</h1>
+<section id="backend" class="content-section" >
+        <div class="backend-section">
+            <div class="container" style="padding-top: 150px;">
+                <div class="col-lg-9 col-lg-offset-2 inside">
+                
+                <% flash.each do |key, value| %>
+                  <div class="alert alert-<%= key %>"><%= value %></div>
+                <% end %>
+
+
 
 <% checked_out = CheckedOut.new %>
 <%= form_for(checked_out) do |f| %>
@@ -27,15 +36,9 @@
     </div>
 <% end %>
 
-<div style="clear: both">
-  <h4 style="float: left">Bikes That Are Checked Out</h4>
-  <h4 style="float: right">Bikes That Can Be Checked Out</h4>
-</div>
-
-<table>
-  <tr>
-    <td>
-      <table>
+<p>
+<h5>Bikes That Are Checked Out</h5>
+      <table border="1" style="width: 100%;">
         <tr>
           <th>Bike</th>
           <th>User's DCE</th>
@@ -50,22 +53,23 @@
         </tr>
         <% end %>
         </table>
-    </td>
-    <td>
-      <table>
-        <tr>
-          <th>Bikes That Can Be Checked Out</th>
-          <th>Past Comments</th>
-        </tr>
-        <% @can_checked_outs.each do |checked_out| %>
-          <tr>
-            <td><%= checked_out.bike_id %></td>
-            <td><%= checked_out.problem_description %></td>
-          </tr>
-        <% end %>
-      </table>
-    </td>
-  </tr>
-</table>
-<br>
-<br>
+        </p>
+        <p>
+          <h5>Bikes That Can Be Checked Out</h5>
+          <table border="1" style="width: 100%;">
+            <tr>
+              <th>Bike #</th>
+              <th>Past Comments</th>
+            </tr>
+            <% @can_checked_outs.each do |checked_out| %>
+              <tr>
+                <td><%= checked_out.bike_id %></td>
+                <td><%= checked_out.problem_description %></td>
+              </tr>
+            <% end %>
+          </table>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

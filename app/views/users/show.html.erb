@@ -1,57 +1,129 @@
-<% provide(:title, 'Account') %>
-<h1>Your Bike Share Account</h1>
-<h3 style="text-align: center;">There are currently <%= number_of_bikes_left %> that can be checked out</h3>
+<% provide(:title, 'Home') %>
+<% provide(:baseUrl, '/') %>
+
+<!-- Stuff -->
 <% user = @accessible[:user]%>
 <% checked_out=@accessible[:check_out]%>
 <% transactions = @accessible[:transaction]%>
 
-<p>
-  <strong>Lifetime Number of Rentals:</strong>
-  <%= user.checked_out.size %>
-</p>
+<!-- 
+top-nav-collapse" role="navigation" style="margin-top: 52px !important;    opacity:0.75;
+    filter:alpha(opacity=75); position: absolute !important;">
+-->
+      <section id="backend" class="content-section" >
+        <div class="backend-section">
+            <div class="container" style="padding-top: 150px;">
+                <div class="col-lg-9 col-lg-offset-2 inside">
+                    <h2>My Account</h2>
+                    <% if current_user.registered %>
+                        <div class="alert alert-success">You are set to go!</div>
+                        <!--<h2>To check out a bike go to the Kate Gleason Residential Office, after April 7th</h2>
+                        <h2>Currently this website is being utilized for users to sign up, see how many bikes are available to be checked
+                          out currently, and to keep track of when you have to return the bike that you have rented out</h2>
+                        <br>-->
+                    <% else %>
+                        <a href="/register"><div class="alert alert-warning">You have not agreeded to the Bikeshare Agreement. Click me to do that.</div></a>
+                    <% end %>
 
-<% if checked_out != "No" %>
-    <p>
-      <strong>Bike currently being rented is due back:  </strong>
-      <%= (checked_out.checkout_time + 1.days).strftime("%A %I:%M %p") %>
-    </p>
-<% else %>
-    <p>
-      <strong>You are not currently renting a bike</strong>
-    </p>
-<% end %>
-<br>
-<% unless transactions.empty? %>
-    <h3 style="text-align: center;">Charges to account</h3>
-    <table>
-      <thead>
-      <tr>
-        <th>Date of charge</th>
-        <th>Charge amount</th>
-        <th>Description of charge</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% transactions.each do |transaction| %>
-          <tr>
-            <td><%= transaction.date_of_charge %></td>
-            <td>$<%= transaction.charge_amount %></td>
-            <td><%= transaction.description_of_charge %></td>
-          </tr>
-      <% end %>
-      </tbody>
-</table>
-<% end %>
-<br>
-<h5>* The Rental Service is free, however there are possible charges for misuse of bikes or the service,
-  as outlined in the rental agreement and copied below</h5>
-<h6>
-  <ul>
-    <li>Late return: $5 per 24 hours, not including the holidays/weekends.</li>
-    <li>Failure to return bike after 4 weeks: The cost of replacing the bike (Approx. $350).</li>
-    <li>Lost Key: $30, to replace the U-Lock.</li>
-    <li>Damaged Key: $5, to replace the key.</li>
-    <li>Lost Bike:  The cost of replacing the bike (Approx. $350).</li>
-    <li>Bike Damage to the point of needing to buy a replacement: The cost of replacing the bike (Approx. $350).</li>
-  </ul>
-</h6>
+<!--
+                    <div class="alert alert-danger"><h2>Your Bike is overdue. Return it ASAP.</h2></div>
+                    
+                    <div class="alert alert-info">You have a bike due back in 7 hours</div>
+-->
+                    <!-- Bike # display -->
+                    <!-- TODO change color based on number of left-->
+                    <div class="alert alert-success">There are <%=number_of_bikes_left %> bikes left to be checked out</div>
+                    
+                    <p>
+                        <h5>Account Information</h5>
+                        <ul>
+                            <!--<li>Name: </li>-->
+                            <li>Email: <%=current_user.email %></li>
+                            <li>Phone: <%=current_user.phone_number %></li>
+                            <% if current_user.registered %>
+                              <li>Service Agreement: Signed</li>
+                            <% else %>
+                              <li>Service Agreement: <a href="/register"><strong>Not Signed</strong></a></li>
+                            <% end %>
+                            
+                        </ul>
+                    </p>
+                    <p>
+                        <h5>Current Rental</h5>
+                        <% if checked_out != "No" %>
+                          Your bike is due back <%= (checked_out.checkout_time + 1.days).strftime("%A %I:%M %p") %>
+                        <% else %>
+                          You do not currently have a bike out.
+                        <% end %>
+                        
+                    </p>
+                    <!--<p>
+                        <h5>Rental History</h5>
+                        <table  border="1" style="width: 100%;">
+                            <tr>
+                                <td>Bike #</td>
+                                <td>Check out Time</td>
+                                <td>Due Back</td>
+                                <td>Check in Time</td>
+                                <td>Time Delta</td>
+                                <td>Fees?</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>2014-03-29 18:30:43</td>
+                                <td>2014-03-30 18:30:43</td>
+                                <td>2014-03-30 13:27:11</td>
+                                <td>19:03:32</td>
+                                <td><a href="">LOST KEY</a></td>
+                            </tr>
+                        </table>
+                    </p>-->
+                <% unless transactions.empty? %>
+                    <p>
+                        <h5>Charges to account</h5>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date of charge</th>
+                                    <th>Charge amount</th>
+                                    <th>Description of charge</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% transactions.each do |transaction| %>
+                                    <tr>
+                                        <td><%= transaction.date_of_charge %></td>
+                                        <td>$<%= transaction.charge_amount %></td>
+                                        <td><%= transaction.description_of_charge %></td>
+                                    </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
+                    </p>
+                <% end %>
+
+                    <p>
+                        <h5>Possible Fees</h5>
+                        The Rental Service is free, however there are possible charges for misuse of bikes or the service, as outlined in the rental agreement and copied below.<br />
+                        <table border="1" style="width: 100%;">
+                            <tr>
+                                <td>Late Return</td>
+                                <td>$5/day</td>
+                                <td>If you fail to return a bike within 24 hours. Does not apply on weekends or days when the institution is closed.</td>
+                            </tr>
+                            <tr>
+                                <td>Failure to Return</td>
+                                <td>~$350</td>
+                                <td>If the bike is not returned within 4 weeks of check out. Includes weekends. </td>
+                            </tr>
+                            <tr>
+                                <td>Lost Key</td>
+                                <td>$5</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
