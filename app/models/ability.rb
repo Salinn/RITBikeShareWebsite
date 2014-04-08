@@ -19,6 +19,7 @@ class Ability
 
       if user.role? "checkout_person"
         can :create, CheckedOut
+        can :update, CheckedOut
       end
     end
   end
