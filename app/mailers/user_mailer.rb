@@ -16,7 +16,7 @@ class UserMailer < ActionMailer::Base
     mail(:to => "sgpres@rit.edu", :subject => "New Feedback")
   end
 
-  def check_out_email
+  def check_out_email user
     @user = user
     mail(:to => @user.email, :subject => "Thanks for checking out a bike!")
   end

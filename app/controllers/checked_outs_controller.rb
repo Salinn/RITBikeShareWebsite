@@ -29,7 +29,7 @@ class CheckedOutsController < ApplicationController
     respond_to do |format|
       if @checked_out.save
         create_bike_values
-        UserMailer.feed_back_email(@feedback_form, current_user).deliver
+        UserMailer.check_out_email(current_user).deliver
         format.html { redirect_to home_check_out_path, notice: "The bike was successfully checked out by #{@checked_out.user.email}." }
         format.json { render action: 'show', status: :created, location: @checked_out }
       else

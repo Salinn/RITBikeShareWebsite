@@ -57,10 +57,10 @@
           <th>Bikes That Can Be Checked Out</th>
           <th>Past Comments</th>
         </tr>
-        <% @can_checked_outs.each do |checked_out| %>
+        <% @can_checked_outs.each do |can_checked_out| %>
           <tr>
-            <td><%= checked_out.bike_id %></td>
-            <td><%= checked_out.problem_description %></td>
+            <td><%= can_checked_out.bike_id %></td>
+            <td><%= can_checked_out.problem_description %></td>
           </tr>
         <% end %>
       </table>
