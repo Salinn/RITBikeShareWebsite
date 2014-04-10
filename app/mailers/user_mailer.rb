@@ -20,4 +20,9 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail(:to => @user.email, :subject => "Thanks for checking out a bike!")
   end
+
+  def transactions_email user
+    @user = user
+    mail(:to => @user.email, :subject => "Your Bike Share Account has just been charged")
+  end
 end
