@@ -15,7 +15,7 @@
 </h3>
 
 <% if current_user.repairman %>
-    There are <%= num_of_bikes_to_be_inspected %> bikes that are currently waiting to be inspected
+    <h3>There are <%= num_of_bikes_to_be_inspected %> bikes that are currently waiting to be inspected</h3>
 <% end %>
 
 <% @feedback_form = FeedbackForm.new %>

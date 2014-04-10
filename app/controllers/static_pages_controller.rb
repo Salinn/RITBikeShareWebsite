@@ -40,7 +40,7 @@ end
 def can_checked_out
   bikes = Bike.order(:bike_id).all
   bikes.each do |bike|
-    bikes.delete bike if bike.need_repair or bike.addtional_repair_need or bike.checked_out and bike.passed_inspection
+    bikes.delete bike if bike.need_repair or bike.addtional_repair_need or bike.checked_out or !bike.passed_inspection
   end
   bikes
 end
