@@ -35,19 +35,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="static_pages_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="static_pages_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="39" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="810">
+            <state line="39" column="0" selection-start="404" selection-end="618" vertical-scroll-proportion="0.73342174" vertical-offset="32" max-vertical-offset="810">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checked_out.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="checked_out.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/checked_out.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="54" selection-start="443" selection-end="443" vertical-scroll-proportion="0.198939" vertical-offset="0" max-vertical-offset="1140">
+            <state line="10" column="54" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
               <folding />
             </state>
           </provider>
@@ -130,8 +130,8 @@
         <option value="$PROJECT_DIR$/app/controllers/checked_outs_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/static_pages/home_user.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/bikes_helper.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/checked_out.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
       </list>
     </option>
   </component>
@@ -840,16 +840,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/checked_out.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="39" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="810">
+        <state line="10" column="54" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/checked_out.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="54" selection-start="443" selection-end="443" vertical-scroll-proportion="0.198939" vertical-offset="0" max-vertical-offset="1140">
+        <state line="39" column="0" selection-start="404" selection-end="618" vertical-scroll-proportion="0.73342174" vertical-offset="32" max-vertical-offset="810">
           <folding />
         </state>
       </provider>
