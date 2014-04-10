@@ -98,12 +98,11 @@ class CheckedOutsController < ApplicationController
     @checked_out.checkin_time=Time.now.in_time_zone
     @checked_out.fixed = checked_out_params[:fixed]
     @checked_out.problem = checked_out_params[:problem] == nil
-    @checked_out.due_back = nil
+    @checked_out.due_back = @checked_out.checkout_time + 1.days
   end
 
   def create_bike_values
     @bike.checked_out=true
-    @bike.next_date_inspected = @checked_out.checkout_time + 7.days
     @bike.save
   end
 
