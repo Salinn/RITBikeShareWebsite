@@ -9,6 +9,7 @@ class CheckedOut < ActiveRecord::Base
   validate :valid_bike, :on => :create
   validate :registered_user, :on => :create
   validate :check_if_bike_needs_repair, :on => :create
+  validate :not_due_today, :on => :create
 
   private
 
@@ -65,6 +66,17 @@ class CheckedOut < ActiveRecord::Base
     rescue
       self.errors.add(:base, "Bike cannot be found, please check your bike number")
       false
+    end
+  end
+
+  def not_due_today
+    begin
+      bike = Bike.find_by_bike_id(bike_id)
+      if bike.next_date_inspected == Time.now.in_time_zone
+        bike.passed_inspection=false
+        self.errors.add(:base, "That bike needs to be inspected")
+        return false
+      end
     end
   end
 end

@@ -14,6 +14,10 @@
   There are <%=number_of_bikes_left %> bikes that are currently available to be checked out
 </h3>
 
+<% if current_user.repairman %>
+    There are <%= num_of_bikes_to_be_inspected %> bikes that are currently waiting to be inspected
+<% end %>
+
 <% @feedback_form = FeedbackForm.new %>
 <%= form_for(@feedback_form) do |f| %>
     <% if @feedback_form.errors.any? %>

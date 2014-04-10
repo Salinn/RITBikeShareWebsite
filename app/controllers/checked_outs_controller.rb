@@ -25,6 +25,12 @@ class CheckedOutsController < ApplicationController
   # POST /checked_outs
   # POST /checked_outs.json
   def create
+    bikes = Bike.all
+    bikes.each do |bike|
+      if bike.next_date_inspected == Time.now.in_time_zone
+        bike.passed_inspection = false
+      end
+    end
     create_checkout_values
     respond_to do |format|
       if @checked_out.save
@@ -97,7 +103,7 @@ class CheckedOutsController < ApplicationController
 
   def create_bike_values
     @bike.checked_out=true
-    @bike.next_date_inspected = @checked_out.checkout_time + 1.days
+    @bike.next_date_inspected = @checked_out.checkout_time + 7.days
     @bike.save
   end
 
@@ -106,7 +112,9 @@ class CheckedOutsController < ApplicationController
     @bike.checked_out=false
     @bike.need_repair = @checked_out.fixed
     @bike.problem_description = @checked_out.problem
-    @bike.next_date_inspected = nil
+    if @bike.next_date_inspected == Time.now.in_time_zone
+      @bike.passed_inspection = false
+    end
     @bike.save
   end
   # Never trust parameters from the scary internet, only allow the white list through.
