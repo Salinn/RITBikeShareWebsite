@@ -1,31 +1,56 @@
 <% provide(:title, 'Home') %>
 <h1>Home Page</h1>
+<div id="left_column">
+    <% checked_out = CheckedOut.new %>
+    <%= form_for(checked_out) do |f| %>
+        <% if checked_out.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(checked_out.errors.count, "error") %> prohibited this checked_out from being saved:</h2>
 
-<% checked_out = CheckedOut.new %>
-<%= form_for(checked_out) do |f| %>
-    <% if checked_out.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(checked_out.errors.count, "error") %> prohibited this checked_out from being saved:</h2>
-
-          <ul>
-            <% checked_out.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
+              <ul>
+                <% checked_out.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+        <div class="field">
+          <%= f.label :user_id %><br>
+          <%= f.text_field :user_id %>
+        </div>
+        <div class="field">
+          <%= f.label :bike_id %><br>
+          <%= f.number_field :bike_id %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
         </div>
     <% end %>
-    <div class="field">
-      <%= f.label :user_id %><br>
-      <%= f.text_field :user_id %>
-    </div>
-    <div class="field">
-      <%= f.label :bike_id %><br>
-      <%= f.number_field :bike_id %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-<% end %>
+</div>
+<div id="right_column">
+  <br>
+  <br>
+  <p>For every student who wants to check out a bike but can't please click this!</p>
+  <% cant_check_out_bike = CantCheckOutBike.new %>
+  <%= form_for(cant_check_out_bike) do |f| %>
+      <% if cant_check_out_bike.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(cant_check_out_bike.errors.count, "error") %> prohibited this cant_check_out_bike from being saved:</h2>
+
+            <ul>
+              <% cant_check_out_bike.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit "Click for every student not able to check out a bike!" %>
+      </div>
+  <% end %>
+</div>
+
 
 <div style="clear: both">
   <h4 style="float: left">Bikes That Are Checked Out</h4>

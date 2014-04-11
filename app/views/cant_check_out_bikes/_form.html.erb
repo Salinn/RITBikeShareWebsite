@@ -1,0 +1,17 @@
+<%= form_for(@cant_check_out_bike) do |f| %>
+  <% if @cant_check_out_bike.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cant_check_out_bike.errors.count, "error") %> prohibited this cant_check_out_bike from being saved:</h2>
+
+      <ul>
+      <% @cant_check_out_bike.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

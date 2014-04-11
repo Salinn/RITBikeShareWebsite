@@ -1,6 +1,8 @@
 RITBikeShareWebsite::Application.routes.draw do
 
   
+  resources :cant_check_out_bikes
+
   resources :feedback_forms
 
   resources :maintenance_reports
