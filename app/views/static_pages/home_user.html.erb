@@ -13,7 +13,11 @@
 <h3>
   There are <%=number_of_bikes_left %> bikes that are currently available to be checked out
 </h3>
-
+<br>
+<h3>
+  Bikes can only be taken out/dropped off from 8:30 am to 4:30 pm!
+</h3>
+<br>
 <% if current_user.repairman %>
     <h3>There are <%= num_of_bikes_to_be_inspected %> bikes that are currently waiting to be inspected</h3>
 <% end %>
