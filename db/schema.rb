@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140411115958) do
 
-  create_table "bikes", force: true do |t|
+  create_table "bikes" do |t|
     t.integer  "bike_id"
     t.boolean  "need_repair"
     t.datetime "created_at"
@@ -26,13 +26,13 @@ ActiveRecord::Schema.define(version: 20140411115958) do
     t.date     "next_date_inspected"
   end
 
-  create_table "cant_check_out_bikes", force: true do |t|
+  create_table "cant_check_out_bikes" do |t|
     t.integer  "number_of_people_who_could_not"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "checked_outs", force: true do |t|
+  create_table "checked_outs" do |t|
     t.integer  "user_id"
     t.integer  "bike_id"
     t.boolean  "fixed"
@@ -47,13 +47,13 @@ ActiveRecord::Schema.define(version: 20140411115958) do
     t.datetime "due_back"
   end
 
-  create_table "feedback_forms", force: true do |t|
+  create_table "feedback_forms" do |t|
     t.text     "feedback"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "maintenance_reports", force: true do |t|
+  create_table "maintenance_reports" do |t|
     t.integer  "user_id"
     t.integer  "bike_id"
     t.text     "report"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20140411115958) do
     t.boolean  "addtional_repair_need"
   end
 
-  create_table "rails_admin_histories", force: true do |t|
+  create_table "rails_admin_histories" do |t|
     t.text     "message"
     t.string   "username"
     t.integer  "item"
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20140411115958) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
 
-  create_table "survey_answers", force: true do |t|
+  create_table "survey_answers" do |t|
     t.integer  "attempt_id"
     t.integer  "question_id"
     t.integer  "option_id"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20140411115958) do
     t.datetime "updated_at"
   end
 
-  create_table "survey_attempts", force: true do |t|
+  create_table "survey_attempts" do |t|
     t.integer "participant_id"
     t.string  "participant_type"
     t.integer "survey_id"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20140411115958) do
     t.integer "score"
   end
 
-  create_table "survey_options", force: true do |t|
+  create_table "survey_options" do |t|
     t.integer  "question_id"
     t.integer  "weight",      default: 0
     t.string   "text"
@@ -102,14 +102,14 @@ ActiveRecord::Schema.define(version: 20140411115958) do
     t.datetime "updated_at"
   end
 
-  create_table "survey_questions", force: true do |t|
+  create_table "survey_questions" do |t|
     t.integer  "survey_id"
     t.string   "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "survey_surveys", force: true do |t|
+  create_table "survey_surveys" do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "attempts_number", default: 0
@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 20140411115958) do
     t.datetime "updated_at"
   end
 
-  create_table "transactions", force: true do |t|
+  create_table "transactions"  do |t|
     t.date     "date_of_charge"
     t.float    "charge_amount"
     t.string   "description_of_charge"
@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 20140411115958) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users" do |t|
     t.string   "login",               default: "", null: false
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",       default: 0

@@ -44,23 +44,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="3" selection-start="172" selection-end="172" vertical-scroll-proportion="0.198939" vertical-offset="0" max-vertical-offset="754">
+            <state line="10" column="3" selection-start="172" selection-end="172" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="390">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schema.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="schema.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/schema.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="24" selection-start="1731" selection-end="1731" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="2400">
-              <folding>
-                <marker date="1397217721781" expanded="true" signature="704:4639" placeholder="do ... end" />
-                <marker date="1397217721781" expanded="true" signature="1016:1339" placeholder="do ... end" />
-              </folding>
+            <state line="49" column="31" selection-start="1732" selection-end="1732" vertical-scroll-proportion="0.86760926" vertical-offset="60" max-vertical-offset="2400">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,7 +75,6 @@
         <option value="$PROJECT_DIR$/app/views/static_pages/reports.html.erb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/static_pages.css.scss" />
-        <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/app/helpers/checked_outs_helper.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140227022927_add_addtional_repair_need_to_maintenance_reports.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss" />
@@ -126,6 +122,7 @@
         <option value="$PROJECT_DIR$/app/views/user_mailer/check_out_email.html.erb" />
         <option value="$PROJECT_DIR$/app/views/static_pages/home_user.html.erb" />
         <option value="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
+        <option value="$PROJECT_DIR$/db/schema.rb" />
       </list>
     </option>
   </component>
@@ -198,33 +195,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RITBikeShareWebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RITBikeShareWebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static_pages" />
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -704,16 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="24" selection-start="1731" selection-end="1731" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="2400">
-          <folding>
-            <marker date="1397217721781" expanded="true" signature="704:4639" placeholder="do ... end" />
-            <marker date="1397217721781" expanded="true" signature="1016:1339" placeholder="do ... end" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/maintenance_reports_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="88" column="24" selection-start="3056" selection-end="3056" vertical-scroll-proportion="0.7944297" vertical-offset="721" max-vertical-offset="1575">
@@ -804,7 +765,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="3" selection-start="172" selection-end="172" vertical-scroll-proportion="0.198939" vertical-offset="0" max-vertical-offset="754">
+        <state line="10" column="3" selection-start="172" selection-end="172" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="390">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="31" selection-start="1732" selection-end="1732" vertical-scroll-proportion="0.86760926" vertical-offset="60" max-vertical-offset="2400">
           <folding />
         </state>
       </provider>
