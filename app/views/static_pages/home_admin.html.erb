@@ -64,9 +64,7 @@
         <tr>
           <th>Bike</th>
           <th>User's DCE</th>
-          <% if current_user.admin %>
-              <th>Due Back</th>
-          <% end %>
+          <th>Due Back</th>
           <th>Check Bike In Link</th>
         </tr>
         <% @checked_outs.each do |checked_out_bikes| %>
@@ -74,9 +72,7 @@
           <td><%= checked_out_bikes.bike_id %></td>
           <% user = User.find( checked_out_bikes.user_id)%>
           <td><%= user.login %></td>
-          <% if current_user.admin %>
-            <td><%= checked_out_bikes.checkout_time.strftime("%B %d, %I:%M") %></td>
-          <% end %>
+          <td><%= checked_out_bikes.checkout_time.strftime("%B %d, %I:%M") %></td>
           <td><%= link_to 'Check Bike In', edit_checked_out_path(checked_out_bikes) %></td>
         </tr>
         <% end %>
