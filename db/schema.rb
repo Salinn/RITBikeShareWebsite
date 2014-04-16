@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140411115958) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bikes", force: true do |t|
     t.integer  "bike_id"
     t.boolean  "need_repair"
@@ -42,7 +45,6 @@ ActiveRecord::Schema.define(version: 20140411115958) do
     t.date     "date_of_checkout"
     t.date     "date_of_checkin"
     t.time     "time_of_checkout"
-    t.datetime "checkin_time"
     t.datetime "checkout_time"
     t.datetime "due_back"
   end
@@ -69,12 +71,12 @@ ActiveRecord::Schema.define(version: 20140411115958) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      limit: 2
-    t.integer  "year",       limit: 5
+    t.integer  "year",       limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories", using: :btree
 
   create_table "survey_answers", force: true do |t|
     t.integer  "attempt_id"
@@ -149,6 +151,6 @@ ActiveRecord::Schema.define(version: 20140411115958) do
     t.string   "phone_number"
   end
 
-  add_index "users", ["login"], name: "index_users_on_login", unique: true
+  add_index "users", ["login"], name: "index_users_on_login", unique: true, using: :btree
 
 end
