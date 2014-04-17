@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140411115958) do
     t.date     "date_of_checkout"
     t.date     "date_of_checkin"
     t.time     "time_of_checkout"
+    t.datetime "checkin_time"
     t.datetime "checkout_time"
     t.datetime "due_back"
   end
