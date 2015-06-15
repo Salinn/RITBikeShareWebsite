@@ -24,13 +24,12 @@ gem 'capricorn'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
-  gem 'sqlite3'
 end
 
 group :development, :test do
   gem 'better_errors', '1.0.1'
   gem 'binding_of_caller', '0.7.2'
-#  gem 'sqlite3'
+  gem 'sqlite3'
 end
 group :production do
   gem 'pg'
