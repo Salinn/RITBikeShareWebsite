@@ -21,12 +21,10 @@ gem 'rails_admin'
 gem 'unicorn'
 gem 'capricorn'
 
-gem 'pg'
-gem 'sqlite3'
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+  gem 'sqlite3'
 end
 
 group :development, :test do
@@ -35,6 +33,6 @@ group :development, :test do
 #  gem 'sqlite3'
 end
 group :production do
-#  gem 'pg'
+  gem 'pg'
   gem 'rails_12factor'
 end
